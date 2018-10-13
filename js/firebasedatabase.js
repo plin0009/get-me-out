@@ -33,6 +33,9 @@ function getOwnData() {
   if (uid && database) {
     let userRef = database.ref("users/" + uid);
     console.log(userRef);
-    return userRef.ref("profilePic");
+    return userRef.val().profilePic;
   }
+}
+function getOwnDataTemp() {
+  return photoURL;
 }
