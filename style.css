@@ -490,7 +490,7 @@
     margin-left: -.1em;
   }
   
-  .H_disabled .H_pano_mm svg.H_icon, {
+  .H_disabled .H_pano_mm svg.H_icon {
     fill: #ddd;
     stroke: #5A6166;
   }
