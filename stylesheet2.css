@@ -13,9 +13,9 @@ button{
   background-color:rgb(26, 24, 41);
   font-family: 'Scada', sans-serif;
   color:white;
-  margin-left:10px;
-  margin-right:10px;
-  font-size:20px;
+  margin-left:0%;
+  margin-right:0%;
+  font-size:150%;
 }
 button:hover{
   background-image:linear-gradient(rgb(26, 24, 41), rgb(10, 9, 15));
