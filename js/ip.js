@@ -32,6 +32,14 @@ function getWatch(lat, long) {
           }
         }
       }
+      for (i = watchData.nwsAlerts.warning.length-1; i >= 0; i--) {
+        if (watchData.nwsAlerts.warning[i].type == 9) {
+          console.log(watchData.nwsAlerts.warning[i].description); // put this on the right side of the website
+          for (i = 0; i < watchData.nwsAlerts.warning[i].zone.length; i++) {
+            watchData.nwsAlerts.warning[i].zone[i]; //plot all these points on the map
+          }
+        }
+      }
     }
   });
 }
