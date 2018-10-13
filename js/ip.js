@@ -27,16 +27,16 @@ function getWatch(lat, long) {
       for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
         if (watchData.nwsAlerts.watch[i].type == 9) {
           console.log(watchData.nwsAlerts.watch[i].description); // put this on the right side of the website
-          for (i = 0; i < watchData.nwsAlerts.watch[i].zone.length; i++) {
-            watchData.nwsAlerts.watch[i].zone[i]; //plot all these points on the map
+          for (j = 0; j < watchData.nwsAlerts.watch[i].zone.length; j++) {
+            plotStaticPoint(true, watchData.nwsAlerts.watch[i].zone[j].latitude, watchData.nwsAlerts.watch[i].zone[j].longitude);
           }
         }
       }
       for (i = watchData.nwsAlerts.warning.length-1; i >= 0; i--) {
         if (watchData.nwsAlerts.warning[i].type == 9) {
           console.log(watchData.nwsAlerts.warning[i].description); // put this on the right side of the website
-          for (i = 0; i < watchData.nwsAlerts.warning[i].zone.length; i++) {
-            watchData.nwsAlerts.warning[i].zone[i]; //plot all these points on the map
+          for (j = 0; j < watchData.nwsAlerts.warning[i].zone.length; j++) {
+            plotStaticPoint(false, watchData.nwsAlerts.warning[i].zone[j].latitude, watchData.nwsAlerts.warning[i].zone[j].longitude);
           }
         }
       }

@@ -25,3 +25,8 @@ function moveToUser(latitude, longitude) {
     map.setCenter({lat: latitude, lng: longitude});
     map.setZoom(15);
 }
+
+function plotStaticPoint(watch, lat, long) {
+    var marker = new H.map.Marker({lat = lat, lng = long});
+    map.addObject(marker);
+}
