@@ -1,3 +1,5 @@
+var usingGeolocation = false;
+
 function useGeolocation() {
   if ("geolocation" in navigator) {
     // use success and error callback functions
@@ -11,6 +13,7 @@ function geolocationSuccess(position) {
   // got the geolocation
   console.log("User geolocation: ", position.coords.latitude, position.coords.longitude);
   moveToUser(position.coords.latitude, position.coords.longitude);
+  usingGeolocation = true;
 }
 function geolocationError(error) {
   // most likely user denied to use location
