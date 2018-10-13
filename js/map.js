@@ -56,16 +56,17 @@ function plotStaticPointWarning(lat, long) {
 
 function others(latitude, longitude) {
     var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="blue" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
+    '<rect stroke="black" fill="purple" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
     '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="black" >U</text></svg>';
+    'text-anchor="middle" fill="white" >O</text></svg>';
+
 }
 
 function you(latitude, longitude) {
     var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
     '<rect stroke="black" fill="blue" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
     '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="black" >U</text></svg>';
+    'text-anchor="middle" fill="white" >U</text></svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
