@@ -1,5 +1,5 @@
 var uiConfig = {
-  signInSuccessUrl: "alert('123')",
+  signInSuccessUrl: "#",
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID
@@ -13,3 +13,11 @@ var uiConfig = {
 };
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start("#firebaseui", uiConfig);
+
+function authLogin() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(user);
+    }
+  })
+}

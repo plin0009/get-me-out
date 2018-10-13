@@ -29,9 +29,10 @@ button:hover{
   position: relative;
   float:center;
 }
-#logo img {
-  height: 60%;
-  position: absolute;
+#logo > img {
+  height: 100%;
+  position: fixed;
+  opacity: 0.15;
   top: 0;
   bottom: 0;
   left: 0;
@@ -59,6 +60,7 @@ button:hover{
 
 #name{
   position: absolute;
+  text-align: center;
   top: 0;
   bottom: 0;
   left: 0;
