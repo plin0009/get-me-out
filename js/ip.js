@@ -10,7 +10,7 @@ function useIP() {
 }
 
 function getWatch(city) {
-  $.getJSON("https://weather.cit.api.here.com/weather/1.0/report.json?product=alerts&name="+city+"&app_id=MNMVa60AhFwhk7UGo1lD&app_code=xY8cMEGImPL_5mndE7WeWQ", 
+  $.getJSON("https://weather.cit.api.here.com/weather/1.0/report.json?product=alerts&name="+city+"&app_id=devportal-demo-20180625&app_code=9v2BkviRwi9Ot26kp2IysQ", 
     function(cityData) {
       console.log(cityData);
     }
