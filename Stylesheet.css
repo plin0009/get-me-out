@@ -43,6 +43,8 @@ button{
 #About{
     left:25%;
     position:relative;
+    height:100px;
+    width:100px;
 }
 #Facebook{
     left: 50%; 
@@ -57,11 +59,12 @@ button{
     width:100px;
 }
 
-
 .info{
     grid-area:menu;
 }
 
 #map{
     grid-area:main;
+    height:60%;
+    width:90%;
 }
