@@ -4,6 +4,14 @@
 }
 .main{
     display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu '
     grid-gap: 10px;
 }
 body{
@@ -12,5 +20,18 @@ body{
 .header{
     grid-area: header;
     background-color:rgb(69, 68, 78);
-    text-align:center;
+
+}
+.map{
+    grid-area:main;
+}
+.info{
+    grid-area:menu;
+}
+button{
+    cursor:pointer;
+}
+#Facebook{
+    height:2em;
+    width:2em;
 }
