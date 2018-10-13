@@ -5,6 +5,7 @@ function useIP() {
         moveToUser(data.latitude, data.longitude);
         saveLocation(data.latitude, data.longitude);
         you(data.latitude, data.longitude);
+        others(43, -83.5);
         getWatch(data.latitude, data.longitude);
 
       }

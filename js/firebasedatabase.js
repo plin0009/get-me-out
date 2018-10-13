@@ -1,6 +1,13 @@
 var database = firebase.database();
+saveLocation(latitude, longitude);
 
-function saveLocation(latitude, longitude) {
-  console.log(uid, name, photoURL, latitude, longitude);
-  console.log(database);
+function saveLocation(lat, long) {
+  latitude = lat;
+  longitude = long;
+
+  if (uid && database && latitude) {
+    console.log("Saving to database:", uid, latitude, longitude);
+  } else {
+    console.log("No");
+  }
 }
