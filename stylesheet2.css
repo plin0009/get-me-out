@@ -59,11 +59,13 @@ button:hover{
   position: relative;
   display: block;
 }
-
+#landing{
+  top: 100%; 
+}
 #name{
   position: absolute;
   text-align: center;
-  top: 37%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
