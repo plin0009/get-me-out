@@ -27,38 +27,6 @@ function moveToUser(latitude, longitude) {
     map.setZoom(25);
 }
 
-var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-function addDraggableMarker(lat, long){
-
-    var marker = new H.map.Marker({lat:lat, lng:long});
-    marker.draggable = true;
-    map.addObject(marker);
-    group.addObject(marker);
-    map.setViewBounds(group.getBounds());
-    map.addEventListener('dragstart', function(ev) {
-      var target = ev.target;
-      if (target instanceof H.map.Marker) {
-        behavior.disable();
-      }
-    }, false);
-  
-    map.addEventListener('dragend', function(ev) {
-      var target = ev.target;
-      if (target instanceof mapsjs.map.Marker) {
-        behavior.enable();
-      }
-    }, false);
-  
-     map.addEventListener('drag', function(ev) {
-      var target = ev.target,
-          pointer = ev.currentPointer;
-      if (target instanceof mapsjs.map.Marker) {
-        target.setPosition(map.screenToGeo(pointer.viewportX, pointer.viewportY));
-      }
-    }, false);
-}
-
 function plotStaticPoint(watch, lat, long) {
     console.log("working");
     var marker = new H.map.Marker({lat: lat, lng: long});

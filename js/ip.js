@@ -12,7 +12,7 @@ function useIP() {
 
 function getWatch(lat, long) {
   $.ajax({
-    url: 'https://weather.cit.api.here.com/weather/1.0/report.json',
+    url: 'https://weather.api.here.com/weather/1.0/report.json',
     type: 'GET',
     dataType: 'jsonp',
     jsonp: 'jsonpcallback',
@@ -25,6 +25,7 @@ function getWatch(lat, long) {
       app_code: '9v2BkviRwi9Ot26kp2IysQ'
     },
     success: function (watchData) {
+      console.log(watchData);
       if (watchData.nwsAlerts.watch) {
         for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.watch[i].type != 9) {
