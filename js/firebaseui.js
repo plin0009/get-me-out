@@ -6,6 +6,7 @@ var uiConfig = {
       uid = user.uid;
       name = user.displayName;
       photoURL = user.photoURL;
+      console.log(uid);
       saveLocation(latitude, longitude);
       return false;
     },
