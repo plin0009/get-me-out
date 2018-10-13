@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" media="screen" href="Stylesheet.css" />
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js%22%3E"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js%22%3E"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js%22%3E"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js%22%3E"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/geolocation.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
@@ -16,9 +17,14 @@
 
     <div class="main">
         <div class="header">
-            <img src="https://www.iconsdb.com/icons/preview/white/square-xxl.png"  id='logo'>
+            <div id="logo">
+                <img src="https://www.iconsdb.com/icons/preview/white/square-xxl.png">
+            </div>
+            <ul>
+
+            </ul>
             <button id="About" onclick="About()">About</button>
-           <img src="https://resurrectionmusclecars.com/wp-content/uploads/2018/04/facebook-logo-png-transparent-background-300x300.png"id="Facebook">
+            <button id="Facebook" onclick="SignIn">Facebook</button>
             <button id="Guest" onclick="gSignIn()">Guest </button>
         </div>
         <div class="info">
