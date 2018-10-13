@@ -20,11 +20,11 @@ function saveLocation(lat, long) {
   }
 }
 
-function getLocations() {
-  console.log(firebase.database());
-  if (firebase.database()) {
-    console.log(firebase.database().ref("users"));
-  }
+function getNames() {
+  let usersRef = firebase.database().ref("users");
+  usersRef.on("value", function (snapshot) {
+    console.log(snapshot.val() && snapshot.val().fullName);
+  })
 }
 
 function getOwnData() {
