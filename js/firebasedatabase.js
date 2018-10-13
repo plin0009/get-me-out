@@ -21,7 +21,7 @@ function saveLocation(lat, long) {
 }
 function getNames() {
   database.ref("users").once("value", function (snapshot) {
-    console.log(snapshot.val() && snapshot.val().fullName);
+    console.log(snapshot.val());
   }, function (err) {
     console.log(err);
   })
