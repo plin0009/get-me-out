@@ -24,10 +24,7 @@ function getLocations() {
   console.log(database);
   if (database) {
     database.ref("users/").once("value", function (snapshot) {
-      console.log(snapshot);
-      snapshot.forEach(function (childNodes) {
-        console.log(childNodes.key, childNodes.val());
-      })
+      console.log(snapshot.val());
     });
   }
 }
