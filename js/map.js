@@ -1,3 +1,4 @@
+var map;
 function loadMap() {
   var platform = new H.service.Platform({
     app_id: 'devportal-demo-20180625',
@@ -12,7 +13,7 @@ function loadMap() {
       ppi: pixelRatio === 1 ? undefined : 320
   });
 
-  var map = new H.Map(document.getElementById('map'),
+  map = new H.Map(document.getElementById('map'),
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
