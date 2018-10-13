@@ -6,7 +6,7 @@ function loadMap() {
     app_code: '9v2BkviRwi9Ot26kp2IysQ',
     useHTTPS: true
   });
-  //var scheme = new H.map.createCustomizableScheme("newCustomScheme", Map.Scheme.NORMAL_NIGHT);
+  
   
 
   var pixelRatio = window.devicePixelRatio || 1;
@@ -17,12 +17,12 @@ function loadMap() {
   });
   defaultLayers.normal.map.setMax(14);
   defaultLayers.normal.map.setMin(4);
+  
 
   map = new H.Map(document.getElementById('map'),
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-  //map.setMapScheme(scheme);
   var ui = H.ui.UI.createDefault(map, defaultLayers);
 }
 
