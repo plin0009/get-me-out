@@ -63,7 +63,7 @@ button:hover{
 #name{
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 37%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -118,4 +118,7 @@ button:hover{
 }
 p{
   font-size:20px;
+}
+#firebaseui{
+  margin: 30%;
 }
