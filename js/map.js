@@ -27,10 +27,22 @@ function moveToUser(latitude, longitude) {
 }
 
 function plotStaticPoint(watch, lat, long) {
-    console.log("working");
     var marker = new H.map.Marker({lat: lat, lng: long});
     map.addObject(marker);
     group.addObject(marker);
     map.addObject(group);
-    map.setViewBounds(group.getBounds());
+    //map.setViewBounds(group.getBounds());
+    //console.log(map.getZoom());
+    //if (map.getZoom() < 10) map.setZoom(10);
+}
+
+function you(latitude, longitude) {
+    var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="black" fill="blue" x="1" y="1" width="22" height="22" />' +
+    '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
+    'text-anchor="middle" fill="black" >U</text></svg>';
+
+    var yourMarkerIcon = new H.map.Icon(svgMarkup);
+    var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
+    map.addObject(yourMarker);
 }

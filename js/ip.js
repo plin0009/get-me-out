@@ -4,14 +4,15 @@ function useIP() {
         console.log(data);
         // TODO: use data.city for later
         moveToUser(data.latitude, data.longitude);
-        //addDraggableMarker(data.latitude, data.longitude);
+        you(data.latitude, data.longitude);
+        plotStaticPoint(0, 41, -85);
         getWatch(data.latitude, data.longitude);
+
       }
   );
 }
 
 function getWatch(lat, long) {
-  console.log(lat, long);
   $.ajax({
     url: 'https://weather.cit.api.here.com/weather/1.0/report.json',
     type: 'GET',
@@ -26,7 +27,6 @@ function getWatch(lat, long) {
       app_code: '9v2BkviRwi9Ot26kp2IysQ',
     },
     success: function (watchData) {
-      console.log(watchData);
       if (watchData.nwsAlerts && watchData.nwsAlerts.watch) {
         for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.watch[i].type != 9) {
@@ -39,7 +39,7 @@ function getWatch(lat, long) {
       }
       if (watchData.nwsAlerts && watchData.nwsAlerts.warning) {
         for (i = watchData.nwsAlerts.warning.length-1; i >= 0; i--) {
-          if (watchData.nwsAlerts.warning[i].type == 9) {
+          if (watchData.nwsAlerts.warning[i].type != 9) {
             console.log(watchData.nwsAlerts.warning[i].description); // put this on the right side of the website
 
           }
