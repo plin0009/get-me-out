@@ -11,7 +11,6 @@ function saveLocation(lat, long) {
     console.log(userRef);
     userRef.set({
       fullName: name,
-      profilePic: photoURL,
       location: [latitude, longitude]
     });
     console.log(userRef);

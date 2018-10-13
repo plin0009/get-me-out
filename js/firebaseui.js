@@ -7,7 +7,7 @@ var uiConfig = {
       name = user.displayName;
       console.log(uid);
       saveLocation(latitude, longitude);
-      you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""))
+      you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
       return false;
     },
     signInFailure: function (error) {
