@@ -28,7 +28,7 @@ function loadMap() {
 
 function moveToUser(latitude, longitude) {
     map.setCenter({lat: latitude, lng: longitude});
-    map.setZoom(4);
+    map.setZoom(10);
 }
 
 function plotStaticPointWatch(lat, long) {
