@@ -7,14 +7,14 @@ var uiConfig = {
       let providerId = authResult.additionalUserInfo.providerId;
       let operationType = authResult.operationType;
       console.log(user, credential, isNewUser, providerId, operationType);
-      return true;
+      return false;
     },
     signInFailure: function (error) {
       console.log(error);
       return error;
     }
   },
-  signInSuccessURL: "#",
+  signInFlow: "popup",
   signInOptions: [
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
