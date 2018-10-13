@@ -16,12 +16,8 @@ var uiConfig = {
   },
   signInFlow: "popup",
   signInOptions: [
-    {
-      provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      customParameters: {
-        prompt: "select-account"
-      }
-    }, firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ],
   tosUrl: function () {
     alert("Coming soon");
