@@ -19,3 +19,14 @@ function saveLocation(lat, long) {
     console.log("No");
   }
 }
+
+function getLocations() {
+  if (database) {
+    let usersRef = database.ref("users");
+    usersRef.on("value"), function (snap) {
+      snap.forEach(function (childNodes) {
+        console.log(childNodes.key, childNodes.val());
+      })
+    }
+  }
+}
