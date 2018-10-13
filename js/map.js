@@ -28,7 +28,7 @@ function moveToUser(latitude, longitude) {
     map.setZoom(10);
 }
 
-function plotStaticPointWatch(watch, lat, long) {
+function plotStaticPointWatch(lat, long) {
     var svgMarkup = '<svg  width="40" height="40" xmlns="http://www.w3.org/2000/svg">' +
     '<circle stroke="orange" fill="orange" fill-opacity="0.4" cx="20" cy="20" r="20" />' +
     '<text x="20" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
@@ -36,14 +36,12 @@ function plotStaticPointWatch(watch, lat, long) {
     var watchIcon = new H.map.Icon(svgMarkup);
     var marker = new H.map.Marker({lat: lat, lng: long}, {icon: watchIcon});
     map.addObject(marker);
-    //group.addObject(marker);
-    //map.addObject(group);
-    //map.setViewBounds(group.getBounds());
+    group.addObject(marker);
     //console.log(map.getZoom());
     //if (map.getZoom() < 10) map.setZoom(10);
 }
 
-function plotStaticPointWarning(watch, lat, long) {
+function plotStaticPointWarning(lat, long) {
     var svgMarkup = '<svg  width="40" height="40" xmlns="http://www.w3.org/2000/svg">' +
     '<circle stroke="red" fill="red" fill-opacity="0.4" cx="20" cy="20" r="20" />' +
     '<text x="20" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
@@ -51,9 +49,7 @@ function plotStaticPointWarning(watch, lat, long) {
     var warningIcon = new H.map.Icon(svgMarkup);
     var marker = new H.map.Marker({lat: lat, lng: long}, {icon: warningIcon});
     map.addObject(marker);
-    //group.addObject(marker);
-    //map.addObject(group);
-    //map.setViewBounds(group.getBounds());
+    group.addObject(marker);
     //console.log(map.getZoom());
     //if (map.getZoom() < 10) map.setZoom(10);
 }
@@ -67,4 +63,10 @@ function you(latitude, longitude) {
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
     map.addObject(yourMarker);
+    group.addObject(yourMarker);
+}
+
+function ending() {
+    map.addObject(group);
+    map.setViewBounds(group.getBounds());
 }
