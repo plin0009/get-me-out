@@ -24,7 +24,7 @@ function getLocations() {
   console.log(database);
   if (database) {
     database.ref("users").once("value", function (snapshot) {
-      console.log(snapshot.val());
+      console.log(snapshot.ref.parent);
     });
   }
 }
