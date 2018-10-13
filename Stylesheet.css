@@ -67,5 +67,6 @@ button{
 #map{
     grid-area:main;
     height:60%;
-    width:90%;
+    width:60%;
+    
 }
