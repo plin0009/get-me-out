@@ -31,15 +31,17 @@ button{
     cursor:pointer;
 }
 
+
+
 /*Top bar stuff*/
 .header{
     width:100%;
     background-color:rgb(69, 68, 78);
     top:0;
     font-family:Arial, Helvetica, sans-serif;
-    position: fixed;
+    position:relative;
 }
-#container{
+.container{
     width:1200px;
     margin: 0 auto;
 }
@@ -63,14 +65,19 @@ li{
 #nav{
     float:right;
 }
-.info{
-    grid-area:menu;
+
+
+
+#info{
+    border-style:dotted;
+    border-width:5px;
+    height:900px;
+    width:400px;
+    float:right;
 }
 
 #map{
     height:60%;
     width:50%;
-    bottom:0;
-    right:0;
-    position:relative;
+    float:left;
 }
