@@ -1,5 +1,5 @@
 /*Grid layout stuff*/
-.main{
+/*.main{
     display: grid;
     grid-template-areas:
         'header header header header header header'
@@ -19,7 +19,7 @@
 .main > div {
     font-size: 30px;
   }
-
+*/
 /*General stuff*/
 body{
     background-color:rgb(27, 27, 51);
@@ -30,35 +30,44 @@ button{
 
 /*Top bar stuff*/
 .header{
-    grid-area: header;
+    width:100%;
     background-color:rgb(69, 68, 78);
-
+    top:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#container{
+    width:960px;
+    margin: 0 auto;
 }
 #logo{
-    height:100px;
-    width:100px;
-    left: 0%; 
-    position: relative;
+    height:50px;
+    width:50px;
+    float: left;
 }
 #About{
-    left:25%;
-    position:relative;
-    height:100px;
-    width:100px;
+    height:50px;
+    width:50px;
 }
-#Facebook{
-    left: 50%; 
-    position: relative;
-    height:100px;
-    width:100px;
+#Facebook.img{
+    height:50px;
+    width:50px;
 }
 #Guest{
-    left: 75%; 
-    position: relative;
-    height:100px;
-    width:100px;
+    height:50px;
+    width:50px;
+}
+li{
+    list-style:none;
+    float:left;
+    margin:20px;
+}
+#name{
+    float:left;
 }
 
+#nav{
+    float:right;
+}
 .info{
     grid-area:menu;
 }
@@ -66,5 +75,6 @@ button{
 #map{
     grid-area:main;
     height:60%;
-    width:90%;
+    width:60%;
+    
 }
