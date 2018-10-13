@@ -5,10 +5,12 @@ $(function() {
   console.log(mainL2);
   console.log($(window).scrollTop());
 
-  if ($(window).scrollTop() >= mainL2 && mainL.hasClass('hidden')){
-    console.log('cancer');
-    mainL.removeClass('hidden');
+  if ($(window).scrollTop() >= mainL2 ){
+    console.log(window.scrollTo(0,750));
   }
-    
+
  
 });
+function goToMap(){
+      console.log(window.scrollTo(0,1000));
+}

@@ -63,7 +63,7 @@ button:hover{
 #name{
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 37%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -73,10 +73,7 @@ button:hover{
 #start{
   height:100%;
 }
-.hidden{
-  opacity:1;
-  transform:translate3d(0,0,400px) rotateY(-40deg);
-}
+
 .infoblock {
   position: relative;
   width: 100%;
@@ -121,4 +118,7 @@ button:hover{
 }
 p{
   font-size:20px;
+}
+#firebaseui{
+  margin: 30%;
 }
