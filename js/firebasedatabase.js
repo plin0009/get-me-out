@@ -21,9 +21,12 @@ function saveLocation(lat, long) {
 }
 
 function getLocations() {
+  console.log(database);
   if (database) {
     let usersRef = database.ref("users");
+    console.log(usersRef);
     usersRef.on("value", function (snap) {
+      console.log(snap);
       snap.forEach(function (childNodes) {
         console.log(childNodes.key, childNodes.val());
       })
