@@ -23,9 +23,7 @@ function saveLocation(lat, long) {
 function getLocations() {
   console.log(database);
   if (database) {
-    database.ref("users").once("value", function (snapshot) {
-      console.log(snapshot.ref.parent);
-    });
+    console.log(database.ref("users"));
   }
 }
 
@@ -33,7 +31,7 @@ function getOwnData() {
   if (uid && database) {
     let userRef = database.ref("users/" + uid);
     console.log(userRef);
-    return userRef.val().profilePic;
+    return userRef.val();
   }
 }
 function getOwnDataTemp() {
