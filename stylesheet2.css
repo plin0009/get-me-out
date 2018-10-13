@@ -51,6 +51,9 @@ button:hover{
 #map {
   width: 65%;
   float: left;
+  border-style: solid;
+  border-width: 10px;
+  border-color: rgb(29, 37, 73);
 }
 #info {
   width: 35%;
@@ -59,25 +62,19 @@ button:hover{
   position: relative;
   display: block;
 }
-#landing{
-  top: 80%; 
-}
 #name{
-  top:20%;
+  top:37%;
   position: absolute;
   text-align: center;
-  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
   height:60%;
-  font-size:50px;
 }
 #start{
   height:70%;
 }
-
 .infoblock {
   position: relative;
   width: 100%;
