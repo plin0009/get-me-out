@@ -14,6 +14,7 @@ var uiConfig = {
       return error;
     }
   },
+  signInSuccessURL: "#",
   signInOptions: [
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
