@@ -10,8 +10,10 @@ body {
   background-color: #333;
   text-align: center;
 }
+#logo img {
+  height: 60%;
+}
 #nav {
-
   display: flex;
 }
 
