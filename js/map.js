@@ -65,10 +65,7 @@ function others(latitude, longitude, url) {
 }
 
 function you(latitude, longitude) {
-    var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="blue" fill-opacity="0.5" x="1" y="1" width="22" height="22" />' +
-    '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="black" >U</text></svg>';
+    var svgMarkup = '<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <image xlink:href="https://lh6.googleusercontent.com/-1qidxwAlH3M/AAAAAAAAAAI/AAAAAAAAJys/BDjIOfER2s8/photo.jpg" height="30" width="30"/> </svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
