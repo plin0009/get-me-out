@@ -1,3 +1,4 @@
+var uid, name;
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
@@ -6,7 +7,9 @@ var uiConfig = {
       let isNewUser = authResult.additionalUserInfo.isNewUser;
       let providerId = authResult.additionalUserInfo.providerId;
       let operationType = authResult.operationType;
-      console.log(user, credential, isNewUser, providerId, operationType);
+      uid = user.uid;
+      name = user.displayName;
+      console.log(uid, name);
       return false;
     },
     signInFailure: function (error) {
