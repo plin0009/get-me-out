@@ -1,13 +1,10 @@
 $(function() {
+    console.log(window.scrollTo(0, 50));
 
-    var mainEl=$('#main');
-        mainEloffset=mainEl.offset().top/2,
-        documentEl=$(document);
-    
-    documentEl.on('scroll',function(){
-        if(documentEl.scrollTop()>mainEloffset); $('#main').fadein();
-
-    });
-
-  
+  var mainL = $("#main");
+  var mainL2 = mainL.offset().top / 2;
+  console.log(mainL2);
+  if ($(window).scrollTop() >= mainL2);
+     console.log('cancer');
+ 
 });
