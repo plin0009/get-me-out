@@ -19,21 +19,3 @@ function saveLocation(lat, long) {
     console.log("No");
   }
 }
-
-function getNames() {
-  let usersRef = firebase.database().ref("users");
-  usersRef.on("value", function (snapshot) {
-    console.log(snapshot.val() && snapshot.val().fullName);
-  })
-}
-
-function getOwnData() {
-  if (uid && firebase.database()) {
-    let userRef = firebase.database().ref("users/" + uid);
-    console.log(userRef);
-    return userRef.val();
-  }
-}
-function getOwnDataTemp() {
-  return photoURL;
-}
