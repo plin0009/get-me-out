@@ -27,7 +27,7 @@ function getWatch(lat, long) {
     },
     success: function (watchData) {
       console.log(watchData);
-      if (watchData.nwsAlerts.watch) {
+      if (watchData.nwsAlerts && watchData.nwsAlerts.watch) {
         for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.watch[i].type != 9) {
             console.log(watchData.nwsAlerts.watch[i].description); // put this on the right side of the website
@@ -37,7 +37,7 @@ function getWatch(lat, long) {
           plotStaticPoint(true, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].latitude, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].longitude);
         }
       }
-      if (watchData.nwsAlerts.warning) {
+      if (watchData.nwsAlerts && watchData.nwsAlerts.warning) {
         for (i = watchData.nwsAlerts.warning.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.warning[i].type == 9) {
             console.log(watchData.nwsAlerts.warning[i].description); // put this on the right side of the website
