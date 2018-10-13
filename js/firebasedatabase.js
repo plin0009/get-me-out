@@ -28,3 +28,11 @@ function getLocations() {
     });
   }
 }
+
+function getOwnData() {
+  if (uid && database) {
+    let userRef = database.ref("users/" + uid);
+    console.log(userRef);
+    return userRef.ref("profilePic");
+  }
+}
