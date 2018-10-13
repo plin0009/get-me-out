@@ -28,7 +28,7 @@ function moveToUser(latitude, longitude) {
 }
 
 function plotStaticPoint(watch, lat, long) {
-    console.log("working")
+    console.log("working");
     var marker = new H.map.Marker({lat: lat, lng: long});
     map.addObject(marker);
     group.addObject(marker);
