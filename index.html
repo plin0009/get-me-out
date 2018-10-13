@@ -4,7 +4,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheet2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js%22%3E"></script> 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
@@ -32,11 +31,26 @@
   <div id="main">
     <div id="start">
         <div id="name">
-            
+
         </div>
+        <div id="firebaseui"></div>
     </div>
     <div id="map" data-aos="fade-up"></div>
     <div id="info"></div>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBYoTjdAG_lKPCbGPRKm4ikKY_877yiLkk",
+      authDomain: "get-me-out-9a601.firebaseapp.com",
+      databaseURL: "https://get-me-out-9a601.firebaseio.com",
+      projectId: "get-me-out-9a601",
+      storageBucket: "get-me-out-9a601.appspot.com",
+      messagingSenderId: "1051623615279"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="js/firebaseui.js"></script>
 </body>
 </html>
