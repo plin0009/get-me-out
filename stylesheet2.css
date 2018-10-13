@@ -7,16 +7,23 @@ body {
 }
 #logo {
   flex-grow: 1;
-  background-color: #333;
   text-align: center;
+  height: 100%;
+  position: relative;
 }
 #logo img {
   height: 60%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 #nav {
   display: flex;
+  height: 60%;
 }
-
 #main {
   height: 90%;
 }
