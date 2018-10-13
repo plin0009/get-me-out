@@ -21,7 +21,8 @@ function saveLocation(lat, long) {
 }
 function getNames() {
   database.ref("users").once("value", function (snapshot) {
-    console.log(snapshot.val());
+    let user = snapshot.val();
+    others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
   }, function (err) {
     console.log(err);
   })
