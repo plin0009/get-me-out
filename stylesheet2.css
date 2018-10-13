@@ -75,6 +75,10 @@ button:hover{
 #start{
   height:70%;
 }
+#about{
+  position:relative;
+  float:left;
+}
 .infoblock {
   position: relative;
   width: 100%;
@@ -117,6 +121,7 @@ button:hover{
   position: absolute;
   bottom: 0;
 }
+
 p{
   font-size:20px;
 }
