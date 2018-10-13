@@ -1,4 +1,5 @@
-var map;
+var map, group = new H.map.Group();
+
 function loadMap() {
   var platform = new H.service.Platform({
     app_id: 'devportal-demo-20180625',
@@ -23,10 +24,14 @@ function loadMap() {
 
 function moveToUser(latitude, longitude) {
     map.setCenter({lat: latitude, lng: longitude});
-    map.setZoom(15);
+    map.setZoom(25);
 }
 
 function plotStaticPoint(watch, lat, long) {
+    console.log("working")
     var marker = new H.map.Marker({lat: lat, lng: long});
     map.addObject(marker);
+    group.addObject(marker);
+    map.addObject(group);
+    map.setViewBounds(group.getBounds());
 }

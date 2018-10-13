@@ -26,7 +26,7 @@ function getWatch(lat, long) {
     success: function (watchData) {
       if (watchData.nwsAlerts.watch) {
         for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
-          if (watchData.nwsAlerts.watch[i].type == 9) {
+          if (watchData.nwsAlerts.watch[i].type != 9) {
             console.log(watchData.nwsAlerts.watch[i].description); // put this on the right side of the website
             for (j = 0; j < watchData.nwsAlerts.watch[i].zone.length; j++) {
               plotStaticPoint(true, watchData.nwsAlerts.watch[i].zone[j].latitude, watchData.nwsAlerts.watch[i].zone[j].longitude);
