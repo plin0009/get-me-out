@@ -1,5 +1,5 @@
 var uiConfig = {
-  signInSuccessUrl: "alert('123')",
+  signInSuccessUrl: "#",
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID
