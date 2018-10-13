@@ -25,9 +25,9 @@ function getLocations() {
   if (database) {
     let usersRef = database.ref("users");
     console.log(usersRef);
-    usersRef.on("value", function (snap) {
-      console.log(snap);
-      snap.forEach(function (childNodes) {
+    usersRef.once("value", function (snapshot) {
+      console.log(snapshot);
+      snapshot.forEach(function (childNodes) {
         console.log(childNodes.key, childNodes.val());
       })
     });
