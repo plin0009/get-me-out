@@ -23,6 +23,9 @@
 /*General stuff*/
 body{
     background-color:rgb(27, 27, 51);
+    padding:0;
+    margin:0;
+    overflow: hidden;
 }
 button{
     cursor:pointer;
@@ -34,28 +37,20 @@ button{
     background-color:rgb(69, 68, 78);
     top:0;
     font-family:Arial, Helvetica, sans-serif;
+    position: fixed;
 }
 #container{
-    width:960px;
+    width:1200px;
     margin: 0 auto;
 }
 #logo{
-    height:50px;
-    width:50px;
     float: left;
 }
-#About{
-    height:50px;
-    width:50px;
+#logo img{
+    height: 50px;
+    width: 50px;
 }
-#Facebook.img{
-    height:50px;
-    width:50px;
-}
-#Guest{
-    height:50px;
-    width:50px;
-}
+
 li{
     list-style:none;
     float:left;
@@ -73,8 +68,9 @@ li{
 }
 
 #map{
-    grid-area:main;
-    height:60%;
-    width:60%;
-    
+    height:30%;
+    width:50%;
+    bottom:0;
+    right:0;
+    position:relative;
 }
