@@ -6,6 +6,9 @@ function loadMap() {
     app_code: '9v2BkviRwi9Ot26kp2IysQ',
     useHTTPS: true
   });
+  //var scheme = new H.map.createCustomizableScheme("newCustomScheme", Map.Scheme.NORMAL_NIGHT);
+  
+
   var pixelRatio = window.devicePixelRatio || 1;
 
   var defaultLayers = platform.createDefaultLayers({
@@ -19,7 +22,7 @@ function loadMap() {
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
+  //map.setMapScheme(scheme);
   var ui = H.ui.UI.createDefault(map, defaultLayers);
 }
 
@@ -63,10 +66,10 @@ function others(latitude, longitude) {
 }
 
 function you(latitude, longitude) {
-    var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="blue" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
+    var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="black" fill="blue" fill-opacity="0.5" x="1" y="1" width="22" height="22" />' +
     '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="white" >U</text></svg>';
+    'text-anchor="middle" fill="black" >U</text></svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
