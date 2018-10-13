@@ -4,7 +4,6 @@ function useIP() {
         console.log(data);
         moveToUser(data.latitude, data.longitude);
         you(data.latitude, data.longitude);
-        plotStaticPointWatch(42.28, -83.7430);
         getWatch(data.latitude, data.longitude);
 
       }
