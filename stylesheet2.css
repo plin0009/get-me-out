@@ -2,8 +2,11 @@
   display: none;
 }
 body {
-  margin: 0 auto;
-  font-family:
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: center;
+  font-family: 'Scada', sans-serif;
+  color:white;
   background-color:rgb(26, 24, 41);
 }
 button{
