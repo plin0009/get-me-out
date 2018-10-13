@@ -40,8 +40,6 @@ function plotStaticPointWatch(lat, long) {
     var marker = new H.map.Marker({lat: lat, lng: long}, {icon: watchIcon});
     map.addObject(marker);
     group.addObject(marker);
-    //console.log(map.getZoom());
-    //if (map.getZoom() < 10) map.setZoom(10);
 }
 
 function plotStaticPointWarning(lat, long) {
@@ -53,16 +51,18 @@ function plotStaticPointWarning(lat, long) {
     var marker = new H.map.Marker({lat: lat, lng: long}, {icon: warningIcon});
     map.addObject(marker);
     group.addObject(marker);
-    //console.log(map.getZoom());
-    //if (map.getZoom() < 10) map.setZoom(10);
 }
 
 function others(latitude, longitude) {
-    var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="purple" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
+    var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="black" fill="purple" fill-opacity="0.5" x="1" y="1" width="22" height="22" />' +
     '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="white" ></text></svg>';
+    'text-anchor="middle" fill="white" >O</text></svg>';
 
+    var otherIcon = new H.map.Icon(svgMarkup);
+    var otherMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: otherIcon});
+    map.addObject(otherMarker);
+    group.addObject(otherMarker);
 }
 
 function you(latitude, longitude) {
