@@ -54,6 +54,13 @@ function plotStaticPointWarning(lat, long) {
     //if (map.getZoom() < 10) map.setZoom(10);
 }
 
+function others(latitude, longitude) {
+    var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="black" fill="blue" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
+    '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
+    'text-anchor="middle" fill="black" >U</text></svg>';
+}
+
 function you(latitude, longitude) {
     var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
     '<rect stroke="black" fill="blue" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
