@@ -1,7 +1,8 @@
 body {
   margin: 0 auto;
   font-family:Arial, Helvetica, sans-serif;
-  /*background-color:rgb(26, 24, 41);*/
+  background-color:rgb(26, 24, 41);
+  color: #eee;
 }
 #header {
   display: flex;
@@ -80,6 +81,21 @@ body {
 .time {
   float: right;
   position: relative;
+}
+.middle {
+  flex-grow: 1;
+}
+.severitybar {
+  height: 3px;
+  background-color: #ff0;
+  position: absolute;
+  bottom: 0;
+}
+.severityfull {
+  height: 3px;
+  background-color: #aa0;
+  position: absolute;
+  bottom: 0;
 }
 p{
   font-size:20px;

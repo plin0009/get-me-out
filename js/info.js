@@ -5,10 +5,11 @@ function addInfoBlock(isWatch, description, message, time, severity) {
     "class": "infoblock",
     append: [
       $("<div/>", {"class": (isWatch && "watch" || "warning") + " symbol"}),
-      $("<div/>", {append: [
+      $("<div/>", {"class": "middle", append: [
       $("<p/>", {"class": "description", text: description}),
       $("<p/>", {"class": "message", text: message})]}),
-      $("<p/>", {"class": "severity", text: severity}), // change to bar later
+      $("<div/>", {"class": "severityfull", width: "100%"}),
+      $("<div/>", {"class": "severitybar", width: severity + "%"}),
       $("<p/>", {"class": "time", text: hourDifference + " hours"})],
     appendTo: "#info"
   });
