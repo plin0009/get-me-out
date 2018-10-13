@@ -28,10 +28,10 @@ function getWatch(lat, long) {
         for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.watch[i].type != 9) {
             console.log(watchData.nwsAlerts.watch[i].description); // put this on the right side of the website
-            for (j = 0; j < watchData.nwsAlerts.watch[i].zone.length; j++) {
-              plotStaticPoint(true, watchData.nwsAlerts.watch[i].zone[j].latitude, watchData.nwsAlerts.watch[i].zone[j].longitude);
-            }
           }
+        }
+        for (j = 0; j < watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone.length; j++) {
+          plotStaticPoint(true, watchData.nwsAlerts.watch[i].zone[j].latitude, watchData.nwsAlerts.watch[i].zone[j].longitude);
         }
       }
       if (watchData.nwsAlerts.warning) {
