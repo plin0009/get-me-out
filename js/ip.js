@@ -1,4 +1,4 @@
-$.getJSON("http://www.geoplugin.net/json.gp?jsoncallback=?",
+$.getJSON("https://json.geoiplookup.io/?callback=?",
     function (data) {
       console.log(data);
     }
