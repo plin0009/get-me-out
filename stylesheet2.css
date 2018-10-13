@@ -1,0 +1,23 @@
+body {
+  margin: 0 auto;
+}
+#header {
+  display: flex;
+  height: 10%;
+}
+#logo {
+  flex-grow: 1;
+  background-color: #333;
+  text-align: center;
+}
+#nav {
+
+  display: flex;
+}
+
+#main {
+  height: 90%;
+}
+#map {
+  width: 65%;
+}
