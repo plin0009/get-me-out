@@ -1,8 +1,33 @@
 var uiConfig = {
-  signInSuccessUrl: "#",
+  callbacks: {
+    signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+      let user = authResult.user;
+      let credential = authResult.credential;
+      let isNewUser = authResult.additionalUserInfo.isNewUser;
+      let providerId = authResult.additionalUserInfo.providerId;
+      let operationType = authResult.operationType;
+      console.log(user, credential, isNewUser, providerId, operationType);
+      return true;
+    },
+    signInFailure: function (error) {
+      console.log(error);
+      return error;
+    }
+  },
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    {
+      provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      scopes: [
+        "https://www.googleapis.com/auth/plus.login"
+      ],
+      customParameters: {
+        prompt: "select-account"
+      }
+    },
+    {
+      provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      scopes: ["default"]
+    }
   ],
   tosUrl: function () {
     alert("Coming soon");
@@ -13,11 +38,3 @@ var uiConfig = {
 };
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start("#firebaseui", uiConfig);
-
-function authLogin() {
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      console.log(user);
-    }
-  })
-}
