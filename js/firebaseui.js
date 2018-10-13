@@ -9,4 +9,4 @@ var uiConfig = {
   privacyPolicyUrl: "pp.html"
 };
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
-ui.start("#firebase-ui-container", uiConfig);
+ui.start("#firebaseui", uiConfig);
