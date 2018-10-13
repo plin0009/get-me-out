@@ -53,11 +53,11 @@ function plotStaticPointWarning(lat, long) {
     group.addObject(marker);
 }
 
-function others(latitude, longitude) {
-    var svgMarkup = '<svg  width="35" height="35" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="purple" fill-opacity="0.5" x="1" y="1" width="22" height="22" />' +
-    '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="black" >O</text></svg>';
+function others(latitude, longitude, initial) {
+    var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="black" fill="purple" fill-opacity="0.5" x="1" y="1" width="30" height="30" />' +
+    '<text x="15" y="22" font-size="12pt" font-family="Arial" font-weight="bold" ' +
+    'text-anchor="middle" fill="black" >'+initial+'</text></svg>';
 
     var otherIcon = new H.map.Icon(svgMarkup);
     var otherMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: otherIcon});
@@ -65,11 +65,11 @@ function others(latitude, longitude) {
     group.addObject(otherMarker);
 }
 
-function you(latitude, longitude) {
-    var svgMarkup = '<svg  width="35" height="35" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="blue" fill-opacity="0.5" x="1" y="1" width="22" height="22" />' +
-    '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="black" >U</text></svg>';
+function you(latitude, longitude, initial) {
+    var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="black" fill="blue" fill-opacity="0.5" x="1" y="1" width="30" height="30" />' +
+    '<text x="15" y="22" font-size="12pt" font-family="Arial" font-weight="bold" ' +
+    'text-anchor="middle" fill="black" >'+initial+'</text></svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
