@@ -28,6 +28,7 @@ button:hover{
   text-align: center;
   height: 100%;
   position: relative;
+  float:center;
 }
 #logo > img {
   height: 100%;
