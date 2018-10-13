@@ -28,10 +28,12 @@ function moveToUser(latitude, longitude) {
 }
 
 function plotStaticPoint(watch, lat, long) {
-    console.log("working")
+    console.log("working");
     var marker = new H.map.Marker({lat: lat, lng: long});
+    marker.color = 'red';
     map.addObject(marker);
     group.addObject(marker);
     map.addObject(group);
     map.setViewBounds(group.getBounds());
 }
+

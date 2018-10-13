@@ -29,4 +29,39 @@ body {
 }
 #map {
   width: 65%;
+  float: left;
+}
+#info {
+  width: 35%;
+  height: 100%;
+  float: right;
+  position: relative;
+  display: block;
+}
+.infoblock {
+  position: relative;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+.symbol {
+  width: 32px;
+  height: 32px;
+  margin: 16px 16px;
+  background-size: 32px 32px;
+  float: left;
+}
+.watch {
+  background-image: url(images/watch-symbol.png);
+}
+.warning {
+  background-image: url(images/warning-symbol.png);
+}
+.description, .message {
+  font-family: Arial Nova, Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.time {
+  float: right;
+  position: relative;
 }

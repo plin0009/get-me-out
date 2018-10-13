@@ -1,16 +1,15 @@
-function addInfo(isWatch, description, message, time, severity) {/*
-  let block = document.createElement("div");
-  block.className = (isWatch && "watch" || "warning") + " block";
-  let descBlock = document.createElement("p");
-  descBlock.innerHTML = description;
-  let messageBlock = document.createElement("p");
-  messageBlock.innerHTML = message;*/
+function addInfoBlock(isWatch, description, message, time, severity) {
+  let msDifference = new Date().getTime() - new Date(time).getTime();
+  let hourDifference = Math.ceil(msDifference / (1000 * 60 * 60));
   $("<div/>", {
-    "class": (isWatch && "watch" || warning) + " block",
+    "class": "infoblock",
     append: [
-      $("<p/>", {text: description, "class": "description"}),
-      $("<p/>", {text: message, "class": "message"})],
+      $("<div/>", {"class": (isWatch && "watch" || "warning") + " symbol"}),
+      $("<div/>", {append: [
+      $("<p/>", {"class": "description", text: description}),
+      $("<p/>", {"class": "message", text: message})]}),
+      $("<p/>", {"class": "severity", text: severity}), // change to bar later
+      $("<p/>", {"class": "time", text: hourDifference + " hours"})],
     appendTo: "#info"
   });
-  console.log(time, severity);
 }
