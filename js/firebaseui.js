@@ -17,17 +17,10 @@ var uiConfig = {
   signInOptions: [
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      scopes: [
-        "https://www.googleapis.com/auth/plus.login"
-      ],
       customParameters: {
         prompt: "select-account"
       }
-    },
-    {
-      provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      scopes: ["default"]
-    }
+    }, firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ],
   tosUrl: function () {
     alert("Coming soon");
