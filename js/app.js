@@ -12,5 +12,5 @@ $(function() {
  
 });
 function goToMap(){
-      console.log(window.scrollTo(0,1000));
+      console.log(window.scrollTo(0,1200));
 }
