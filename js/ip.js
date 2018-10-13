@@ -3,16 +3,17 @@ function useIP() {
       function (data) {
         console.log(data);
         // TODO: use data.city for later
-        usingGeolocation || moveToUser(data.latitude, data.longitude);
-        addDraggableMarker(data.latitude, data.longitude);
+        moveToUser(data.latitude, data.longitude);
+        //addDraggableMarker(data.latitude, data.longitude);
         getWatch(data.latitude, data.longitude);
       }
   );
 }
 
 function getWatch(lat, long) {
+  console.log(lat, long);
   $.ajax({
-    url: 'https://weather.api.here.com/weather/1.0/report.json',
+    url: 'https://weather.cit.api.here.com/weather/1.0/report.json',
     type: 'GET',
     dataType: 'jsonp',
     jsonp: 'jsonpcallback',
@@ -22,7 +23,7 @@ function getWatch(lat, long) {
       longitude: long,
       oneobservation: 'true',
       app_id: 'devportal-demo-20180625',
-      app_code: '9v2BkviRwi9Ot26kp2IysQ'
+      app_code: '9v2BkviRwi9Ot26kp2IysQ',
     },
     success: function (watchData) {
       console.log(watchData);
@@ -40,7 +41,7 @@ function getWatch(lat, long) {
         for (i = watchData.nwsAlerts.warning.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.warning[i].type == 9) {
             console.log(watchData.nwsAlerts.warning[i].description); // put this on the right side of the website
-            
+
           }
         }
         for (j = 0; j < watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone.length; j++) {
@@ -50,4 +51,3 @@ function getWatch(lat, long) {
     }
   });
 }
-

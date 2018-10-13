@@ -6,7 +6,6 @@ function loadMap() {
     app_code: '9v2BkviRwi9Ot26kp2IysQ',
     useHTTPS: true
   });
-
   var pixelRatio = window.devicePixelRatio || 1;
 
   var defaultLayers = platform.createDefaultLayers({
@@ -24,16 +23,14 @@ function loadMap() {
 
 function moveToUser(latitude, longitude) {
     map.setCenter({lat: latitude, lng: longitude});
-    map.setZoom(25);
+    map.setZoom(10);
 }
 
 function plotStaticPoint(watch, lat, long) {
     console.log("working");
     var marker = new H.map.Marker({lat: lat, lng: long});
-    marker.color = 'red';
     map.addObject(marker);
     group.addObject(marker);
     map.addObject(group);
     map.setViewBounds(group.getBounds());
 }
-
