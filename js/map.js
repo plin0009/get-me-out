@@ -57,7 +57,7 @@ function others(latitude, longitude) {
     var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
     '<rect stroke="black" fill="purple" fill-opacity="0.5" x="1" y="1" width="22" height="22" />' +
     '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
-    'text-anchor="middle" fill="white" >O</text></svg>';
+    'text-anchor="middle" fill="black" >O</text></svg>';
 
     var otherIcon = new H.map.Icon(svgMarkup);
     var otherMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: otherIcon});
