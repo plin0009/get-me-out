@@ -1,7 +1,7 @@
 window.onload = function() {
   // everything that happens on pageload goes here
   loadMap();
-  useIP();
+  useIP();/*
   $(window).scroll(function() {
     if ($(this).width() < 992) {
         if ($(this).height() <= 768) {
@@ -10,6 +10,6 @@ window.onload = function() {
             }
         }
     }
-  });
+  });*/
   //useGeolocation();
 }
