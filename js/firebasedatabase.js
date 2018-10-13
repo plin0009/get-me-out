@@ -21,15 +21,16 @@ function saveLocation(lat, long) {
 }
 
 function getNames() {
-  let usersRef = firebase.database().ref("users");
-  usersRef.on("value", function (snapshot) {
+  database.ref("users").once("value", function (snapshot) {
     console.log(snapshot.val() && snapshot.val().fullName);
+  }, function (err) {
+    console.log(err);
   })
 }
 
 function getOwnData() {
-  if (uid && firebase.database()) {
-    let userRef = firebase.database().ref("users/" + uid);
+  if (uid && database) {
+    let userRef = database.ref("users/" + uid);
     console.log(userRef);
     return userRef.val();
   }
