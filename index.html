@@ -1,31 +1,35 @@
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet2.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Scada:700" rel="stylesheet">
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-    <script type="text/javascript" src="js/ip.js"></script>
-    <script type="text/javascript" src="js/geolocation.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-    <script type="text/javascript" src="js/info.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <title>GetMeOut</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheet2.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Scada:700" rel="stylesheet">
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+  <script type="text/javascript" src="js/ip.js"></script>
+  <script type="text/javascript" src="js/geolocation.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+  <script type="text/javascript" src="js/info.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <title>GetMeOut</title>
 
 
 </head>
+
 <body>
   <div id="header">
     <div id="logo">
-        <img src="images/finallogo.png">
+      <img src="images/finallogo.png">
     </div>
     <div id="nav">
       <button id="Landing" onclick="location.href='index.html'">Home</button>
@@ -33,13 +37,13 @@
       <button id="About" onclick="location.href='about.html'">About</button>
     </div>
   </div>
-  <div id="main">
+  <div id="main" class="hidden">
     <div id="start">
         <div id="name">
         </div>
         <div id="firebaseui"></div>
     </div>
-    <div id="map" data-aos="fade-up"></div>
+    <div id="map" ></div>
     <div id="info"></div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
@@ -58,4 +62,5 @@
   <script src="js/firebaseui.js"></script>
   <script src="js/firebasedatabase.js"></script>
 </body>
+
 </html>

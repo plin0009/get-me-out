@@ -73,7 +73,10 @@ button:hover{
 #start{
   height:100%;
 }
-
+.hidden{
+  opacity:1;
+  transform:translate3d(0,0,400px) rotateY(-40deg);
+}
 .infoblock {
   position: relative;
   width: 100%;
