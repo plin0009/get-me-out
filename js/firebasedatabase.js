@@ -23,10 +23,10 @@ function saveLocation(lat, long) {
 function getLocations() {
   if (database) {
     let usersRef = database.ref("users");
-    usersRef.on("value"), function (snap) {
+    usersRef.on("value", function (snap) {
       snap.forEach(function (childNodes) {
         console.log(childNodes.key, childNodes.val());
       })
-    }
+    });
   }
 }
