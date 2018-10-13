@@ -1,5 +1,5 @@
 /*Grid layout stuff*/
-.main{
+/*.main{
     display: grid;
     grid-template-areas:
         'header header header header header header'
@@ -19,7 +19,7 @@
 .main > div {
     font-size: 30px;
   }
-
+*/
 /*General stuff*/
 body{
     background-color:rgb(27, 27, 51);
@@ -30,7 +30,8 @@ button{
 
 /*Top bar stuff*/
 .header{
-    grid-area: header;
+    height:20px;
+    width:1500px;
     background-color:rgb(69, 68, 78);
 
 }
@@ -46,11 +47,11 @@ button{
     height:100px;
     width:100px;
 }
-#Facebook{
+#Facebook.img{
     left: 50%; 
     position: relative;
-    height:100px;
-    width:100px;
+    height:50px;
+    width:50px;
 }
 #Guest{
     left: 75%; 
