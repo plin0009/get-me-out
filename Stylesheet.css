@@ -1,0 +1,16 @@
+#logo{
+    height:100px;
+    width:100px;
+}
+.main{
+    display: grid;
+    grid-gap: 10px;
+}
+body{
+    background-color:rgb(27, 27, 51);
+}
+.header{
+    grid-area: header;
+    background-color:rgb(69, 68, 78);
+    text-align:center;
+}
