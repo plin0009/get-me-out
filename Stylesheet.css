@@ -1,7 +1,4 @@
-#logo{
-    height:100px;
-    width:100px;
-}
+/*Grid layout stuff*/
 .main{
     display: grid;
     grid-template-areas:
@@ -17,26 +14,54 @@
         'main main main main menu menu '
         'main main main main menu menu '
         'main main main main menu menu ';
-    grid-gap:10px;
+    
 }
+.main > div {
+    font-size: 30px;
+  }
+
+/*General stuff*/
 body{
     background-color:rgb(27, 27, 51);
 }
+button{
+    cursor:pointer;
+}
+
+/*Top bar stuff*/
 .header{
     grid-area: header;
     background-color:rgb(69, 68, 78);
 
 }
-#map{
-    grid-area:main;
+#logo{
+    height:100px;
+    width:100px;
+    left: 0%; 
+    position: relative;
 }
+#About{
+    left:25%;
+    position:relative;
+}
+#Facebook{
+    left: 50%; 
+    position: relative;
+    height:100px;
+    width:100px;
+}
+#Guest{
+    left: 75%; 
+    position: relative;
+    height:100px;
+    width:100px;
+}
+
+
 .info{
     grid-area:menu;
 }
-button{
-    cursor:pointer;
-}
-#Facebook{
-    height:2em;
-    width:2em;
+
+#map{
+    grid-area:main;
 }
