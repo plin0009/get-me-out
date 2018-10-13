@@ -12,6 +12,8 @@ function loadMap() {
       tileSize: pixelRatio === 1 ? 128 : 256,
       ppi: pixelRatio === 1 ? undefined : 320
   });
+  defaultLayers.normal.map.setMax(14);
+  defaultLayers.normal.map.setMin(4);
 
   map = new H.Map(document.getElementById('map'),
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
@@ -26,23 +28,45 @@ function moveToUser(latitude, longitude) {
     map.setZoom(10);
 }
 
-function plotStaticPoint(watch, lat, long) {
-    var marker = new H.map.Marker({lat: lat, lng: long});
+function plotStaticPointWatch(lat, long) {
+    var svgMarkup = '<svg  width="40" height="40" xmlns="http://www.w3.org/2000/svg">' +
+    '<circle stroke="orange" fill="orange" fill-opacity="0.4" cx="20" cy="20" r="20" />' +
+    '<text x="20" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
+    'text-anchor="middle" fill="orange" > </text></svg>';
+    var watchIcon = new H.map.Icon(svgMarkup);
+    var marker = new H.map.Marker({lat: lat, lng: long}, {icon: watchIcon});
     map.addObject(marker);
     group.addObject(marker);
-    map.addObject(group);
-    //map.setViewBounds(group.getBounds());
+    //console.log(map.getZoom());
+    //if (map.getZoom() < 10) map.setZoom(10);
+}
+
+function plotStaticPointWarning(lat, long) {
+    var svgMarkup = '<svg  width="40" height="40" xmlns="http://www.w3.org/2000/svg">' +
+    '<circle stroke="red" fill="red" fill-opacity="0.4" cx="20" cy="20" r="20" />' +
+    '<text x="20" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
+    'text-anchor="middle" fill="red" > </text></svg>';
+    var warningIcon = new H.map.Icon(svgMarkup);
+    var marker = new H.map.Marker({lat: lat, lng: long}, {icon: warningIcon});
+    map.addObject(marker);
+    group.addObject(marker);
     //console.log(map.getZoom());
     //if (map.getZoom() < 10) map.setZoom(10);
 }
 
 function you(latitude, longitude) {
     var svgMarkup = '<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="black" fill="blue" x="1" y="1" width="22" height="22" />' +
+    '<rect stroke="black" fill="blue" fill-opacity="0.4" x="1" y="1" width="22" height="22" />' +
     '<text x="12" y="18" font-size="12pt" font-family="Arial" font-weight="bold" ' +
     'text-anchor="middle" fill="black" >U</text></svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
     map.addObject(yourMarker);
+    group.addObject(yourMarker);
+}
+
+function ending() {
+    map.addObject(group);
+    map.setViewBounds(group.getBounds());
 }

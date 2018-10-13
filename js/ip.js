@@ -2,10 +2,8 @@ function useIP() {
   $.getJSON("https://json.geoiplookup.io/?callback=?",
       function (data) {
         console.log(data);
-        // TODO: use data.city for later
         moveToUser(data.latitude, data.longitude);
         you(data.latitude, data.longitude);
-        plotStaticPoint(0, 41, -85);
         getWatch(data.latitude, data.longitude);
 
       }
@@ -34,7 +32,7 @@ function getWatch(lat, long) {
           }
         }
         for (j = 0; j < watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone.length; j++) {
-          plotStaticPoint(true, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].latitude, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].longitude);
+          plotStaticPointWatch(watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].latitude, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].longitude);
         }
       }
       if (watchData.nwsAlerts && watchData.nwsAlerts.warning) {
@@ -45,9 +43,10 @@ function getWatch(lat, long) {
           }
         }
         for (j = 0; j < watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone.length; j++) {
-          plotStaticPoint(false, watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].latitude, watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].longitude);
+          plotStaticPointWarning(watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].latitude, watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].longitude);
         }
       }
+      ending();
     }
   });
 }

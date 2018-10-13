@@ -1,11 +1,15 @@
 var uiConfig = {
-  signInSuccessUrl: "#",
+  signInSuccessUrl: "alert('123')",
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ],
-  tosUrl: "#",
-  privacyPolicyUrl: "#"
+  tosUrl: function () {
+    alert("Coming soon");
+  },
+  privacyPolicyUrl: function () {
+    alert("Coming soon");
+  }
 };
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start("#firebaseui", uiConfig);
