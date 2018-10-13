@@ -1,4 +1,5 @@
-$(function(){
-    $("#About").slideUp(1000);
-});
+//$(function(){
+   //$("#About").slideUp(1000);
+//});
+
 

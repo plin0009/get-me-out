@@ -1,5 +1,7 @@
 body {
   margin: 0 auto;
+  font-family:Arial, Helvetica, sans-serif;
+  /*background-color:rgb(26, 24, 41);*/
 }
 #header {
   display: flex;
@@ -38,6 +40,20 @@ body {
   position: relative;
   display: block;
 }
+
+#name{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height:60%
+}
+#start{
+  height:20%;
+}
+
 .infoblock {
   position: relative;
   width: 100%;
@@ -64,4 +80,7 @@ body {
 .time {
   float: right;
   position: relative;
+}
+p{
+  font-size:20px;
 }
