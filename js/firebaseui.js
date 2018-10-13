@@ -2,11 +2,7 @@ var uid, name, photoURL;
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-      let user = authResult.user;/*
-      let credential = authResult.credential;
-      let isNewUser = authResult.additionalUserInfo.isNewUser;
-      let providerId = authResult.additionalUserInfo.providerId;
-      let operationType = authResult.operationType;*/
+      let user = authResult.user;
       uid = user.uid;
       name = user.displayName;
       photoURL = user.photoURL;
