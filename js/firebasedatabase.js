@@ -23,7 +23,7 @@ function saveLocation(lat, long) {
 function getLocations() {
   console.log(database);
   if (database) {
-    let usersRef = database.ref("users");
+    let usersRef = database.ref("users/");
     console.log(usersRef);
     usersRef.once("value", function (snapshot) {
       console.log(snapshot);
