@@ -12,7 +12,12 @@
         'main main main main menu menu '
         'main main main main menu menu '
         'main main main main menu menu '
-    grid-gap: 10px;
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu '
+        'main main main main menu menu ';
+    grid-gap:10px;
 }
 body{
     background-color:rgb(27, 27, 51);
@@ -22,7 +27,7 @@ body{
     background-color:rgb(69, 68, 78);
 
 }
-.map{
+#map{
     grid-area:main;
 }
 .info{
