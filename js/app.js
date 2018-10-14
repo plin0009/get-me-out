@@ -22,6 +22,7 @@ $(document).ready(function () {
   });
 
   $('#findRoute').click(function(){
+    removePreviousRoutes();
     calculateRouteFromAtoB(latitude, longitude, targetlat ,targetlng);
   });
 

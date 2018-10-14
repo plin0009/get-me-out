@@ -174,10 +174,7 @@ function setUpClickListener() {
     });
   }
 
-  function removeObjectById(id){
-    for (object of map.getObjects()){
-     if (object.id===id){
-         map.removeObject(object);
-         }
-     }
- }
+function removePreviousRoutes() {
+    map.remove(polyline);
+    map.remove(maneuversGroup);
+}
