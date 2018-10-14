@@ -7,7 +7,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Scada:700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="fullpage.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.css">
   <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
@@ -27,9 +27,9 @@
 <body>
   <div id="header">
     <div id="nav">
-      <a href='#top'><button>Home</button></a>
-      <a href='#map'><button>Map</button></a>
-      <a href='#about'><button>About</button></a>
+      <button id="homeButton">Home</button>
+      <button id="mapButton">Map</button>
+      <button id="aboutButton">About</button>
     </div>
   </div>
   <div id="fullpage">
@@ -89,20 +89,21 @@
   </script>
   <script src="js/firebaseui.js"></script>
   <script src="js/firebasedatabase.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+ <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="vendors/jquery.easings.min.js"></script>
   <script type="text/javascript" src="jquery.fullPage.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto.fullpage/0.5.0/js.fullpage.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.6/jquery.fullpage.min.js"></script>-->
 
-  
+  <!--
   <script type="text/javascript">
   $(document).ready(function(){
     $('#fullpage').fullpage({
 
     });
-  });
+  });-->
   
   </script>
 </body>

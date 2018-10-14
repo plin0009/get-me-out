@@ -63,9 +63,7 @@ button:hover{
 #map {
   width: 60%;
   float: left;
-  border-style: solid;
-  border-width: 10px;
-  border-color: rgb(29, 37, 73);
+
 }
 #info {
   width: 35%;
