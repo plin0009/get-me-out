@@ -22,7 +22,11 @@ function getUsers() {
     let users = snapshot.val();
     map.removeAllObjects();
     for (let currentUID in users) {
-      if (users.hasOwnProperty(currentUID) && currentUID !== uid) {
+      if (users.hasOwnProperty(currentUID)) {
+        if (currentUID == uid) {
+          you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
+          continue;
+        }
         let user = users[currentUID];
         others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
         console.log(user.fullName);
