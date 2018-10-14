@@ -17,7 +17,7 @@ function saveLocation(lat, long) {
 function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     if (!uid) return;
-    let users = snapshot.val();
+    var users = snapshot.val();
     let keys = Object.keys(users);
     for (let marker in group.getObjects()) {
       let currentUID = marker.getData().uid;
@@ -32,6 +32,7 @@ function getUsers() {
         you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
         continue;
       }
+      console.log(users);
       let user = users[currentUID];
       others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""), currentUID);
     }
