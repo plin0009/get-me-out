@@ -131,7 +131,7 @@ function addRouteShapeToMap (route) {
       map.addObject(polyline);
       map.setViewBounds(polyline.getBounds(), true);
 }
-
+var maneuversGroup;
 function addManueversToMap (route) {
     var svgMarkup = '<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="8" fill="rgba(26, 24, 41, 0.7)" stroke="white" stroke-width="1"/></svg>';
     var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}}), maneuversGroup = new  H.map.Group();
