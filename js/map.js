@@ -53,14 +53,14 @@ function plotStaticPointWarning(lat, long) {
     group.addObject(marker);
 }
 
-function others(latitude, longitude, initial) {
+function others(latitude, longitude, initial, userID) {
     var svgMarkup = '<svg  width="30" height="30" xmlns="http://www.w3.org/2000/svg">' +
     '<rect stroke="black" fill="purple" fill-opacity="0.5" x="1" y="1" width="30" height="30" />' +
     '<text x="15" y="22" font-size="12pt" font-family="Arial" font-weight="bold" ' +
     'text-anchor="middle" fill="black" >'+initial+'</text></svg>';
 
     var otherIcon = new H.map.Icon(svgMarkup);
-    var otherMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: otherIcon});
+    var otherMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: otherIcon, data:{uid:userID}});
     console.log(otherMarker);
     //map.addObject(otherMarker);
     group.addObject(otherMarker);
@@ -73,7 +73,7 @@ function you(latitude, longitude, initial) {
     'text-anchor="middle" fill="black" >'+initial+'</text></svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
-    var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
+    var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon}, data: {uid:uid});
     console.log(yourMarker);
     map.addObject(yourMarker);
     group.addObject(yourMarker);
