@@ -180,10 +180,5 @@ function setUpClickListener() {
 
 function removePreviousRoutes() {
     map.removeObject(polyline);
-<<<<<<< HEAD
-    map.removeObject(maneuversGroup);
-}
-=======
     maneuversGroup.removeAll();
 }
->>>>>>> b50c364e976ac2e92bcbec6a900e5a119849ab6c
