@@ -1,5 +1,6 @@
 var map, group = new H.map.Group(), platform, targetlat, targetlng;
 var maneuversGroup = new  H.map.Group();
+var count = 0;
 
 function loadMap() {
     platform = new H.service.Platform({
@@ -101,11 +102,15 @@ function calculateRouteFromAtoB (lat1, lng1, lat2, lng2) {
 }
 
 function onSuccess (result) {
+    if (count > 0) {
+        removePreviousRoutes();
+    }
     var route = result.response.route[0];
     addRouteShapeToMap(route);
     addManueversToMap(route);
 
     addSummaryToPanel(route.summary);
+    count++;
 }
 
 function onError (error) {
