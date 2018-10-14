@@ -1,0 +1,98 @@
+{
+  "nwsAlerts": {
+    "watch": [
+      {
+        "type": "9",
+        "description": "Hurricane Alert",
+        "severity": 70,
+        "message": "There are hurricane conditions present. Evacuate the area if possible.",
+        "zone": [
+          {
+            "value": "LHZ464",
+            "country": "US",
+            "countryName": "United States",
+            "state": "*",
+            "stateName": "*",
+            "name": "Lake Huron... Port Sanilac to Port Huron 5 nm Off Shore to US/Canadian border",
+            "latitude": "43.22787",
+            "longitude": "-82.29868"
+          },
+          {
+            "value": "LHZ462",
+            "country": "US",
+            "countryName": "United States",
+            "state": "*",
+            "stateName": "*",
+            "name": "Lake Huron  Port Austin to Harbor Beach MI 5 NM Off Shore to the US/Canadian border",
+            "latitude": "44.00947",
+            "longitude": "-82.58811"
+          },
+          {
+            "value": "LHZ463",
+            "country": "US",
+            "countryName": "United States",
+            "state": "*",
+            "stateName": "*",
+            "name": "Lake Huron Harbor Beach to Port Sanilac 5 nm Off Shore to US/Canadian border",
+            "latitude": "43.63758",
+            "longitude": "-82.31973"
+          }
+        ],
+        "name": "Richmondville",
+        "country": "United States",
+        "state": "Michigan",
+        "latitude": "43.62",
+        "longitude": "-82.40",
+        "validFromTimeLocal": "2018-10-14T03:57:00.000-04:00",
+        "validUntilTimeLocal": "2018-10-16T02:00:00.000-04:00"
+      },
+      {
+        "type": "9",
+        "description": "Hurricane Alert",
+        "severity": 70,
+        "message": "There are hurricane conditions present. Evacuate the area if possible.",
+        "zone": [
+          {
+            "value": "LHZ464",
+            "country": "US",
+            "countryName": "United States",
+            "state": "*",
+            "stateName": "*",
+            "name": "Lake Huron... Port Sanilac to Port Huron 5 nm Off Shore to US/Canadian border",
+            "latitude": "43.22787",
+            "longitude": "-82.29868"
+          },
+          {
+            "value": "LHZ462",
+            "country": "US",
+            "countryName": "United States",
+            "state": "*",
+            "stateName": "*",
+            "name": "Lake Huron  Port Austin to Harbor Beach MI 5 NM Off Shore to the US/Canadian border",
+            "latitude": "44.00947",
+            "longitude": "-82.58811"
+          },
+          {
+            "value": "LHZ463",
+            "country": "US",
+            "countryName": "United States",
+            "state": "*",
+            "stateName": "*",
+            "name": "Lake Huron Harbor Beach to Port Sanilac 5 nm Off Shore to US/Canadian border",
+            "latitude": "43.63758",
+            "longitude": "-82.31973"
+          }
+        ],
+        "name": "Richmondville",
+        "country": "United States",
+        "state": "Michigan",
+        "latitude": "43.62",
+        "longitude": "-82.40",
+        "validFromTimeLocal": "2018-10-14T09:59:00.000-04:00",
+        "validUntilTimeLocal": "2018-10-16T02:00:00.000-04:00"
+      }
+    ]
+  },
+  "feedCreation": "2018-10-14T15:39:21.944Z",
+  "metric": true
+}
