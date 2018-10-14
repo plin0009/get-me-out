@@ -82,7 +82,7 @@ function ending() {
     map.setViewBounds(group.getBounds());
 }
 
-function calculateRouteFromAtoB (platform, lat1, lng1, lat2, lng2) {
+function calculateRoute (platform, lat1, lng1, lat2, lng2) {
     var router = platform.getRoutingService(),
       routeRequestParams = {
         mode: 'fastest;car',
@@ -160,4 +160,8 @@ function addManueversToMap (route) {
     }, false);
     
     map.addObject(group);
+}
+
+function addSummaryToPanel (summary) {
+    // just use summary.distance and summary.time somehow
 }
