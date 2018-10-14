@@ -22,7 +22,7 @@ $(document).ready(function () {
   });
 
   $('#findRoute').click(function(){
-    calculateRouteFromAtoB(42.2747974,-83.7359662, 42.3770921,-83.5387994);
+    calculateRouteFromAtoB(latitude, longitude, targetlat ,targetlng);
   });
 
 

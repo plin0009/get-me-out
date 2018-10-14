@@ -1,4 +1,4 @@
-var map, group = new H.map.Group(), platform;
+var map, group = new H.map.Group(), platform, targetlat, targetlng;
 
 function loadMap() {
     platform = new H.service.Platform({
@@ -161,3 +161,17 @@ function addManueversToMap (route) {
 function addSummaryToPanel (summary) {
     // just use summary.distance and summary.time somehow
 }
+
+function setUpClickListener(map) {
+    // Attach an event listener to map display
+    // obtain the coordinates and display in an alert box.
+    map.addEventListener('tap', function (evt) {
+      var coord = map.screenToGeo(evt.currentPointer.viewportX,
+              evt.currentPointer.viewportY);
+      alert('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
+          ((coord.lat > 0) ? 'N' : 'S') +
+          ' ' + Math.abs(coord.lng.toFixed(4)) +
+           ((coord.lng > 0) ? 'E' : 'W'));
+    });
+    targetlat = coord.lat, targetlng = coord.lng;
+  }
