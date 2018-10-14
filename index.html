@@ -33,13 +33,16 @@
 
 <body>
   <div id="header">
-    <div id="logo">
-      <img src="images/finallogo.png">
-    </div>
     <div id="nav">
+<<<<<<< HEAD
      <button onclick="toMain()">Home</button>
       <button id="mapButton">Map</button>
       <button onclick="toAbout()">About</button>
+=======
+        <a href="#top"><button>Home</button></a>
+        <a href="#map"><button>Map</button></a>
+        <a href="#about"><button>About</button></a>
+>>>>>>> 2fa33e201fb556c7f90cfb16a4d80335f383d92a
     </div>
   </div>
   <div id="fullpage">
@@ -50,11 +53,9 @@
       </div>
       <div id="firebaseui"></div>
     </div>
-    <main>
-        <div id="map"></div>
-        <div id="info"></div>
-    </main>
-  
+    <div id="map" ></div>
+    <div id="info"></div>
+  </div>
   <div id="about">
     <h1>About Us</h1>
     <h2>What is Get Me Out</h2>
@@ -83,7 +84,9 @@
     </p>
   </div>
   </div>
-
+  <div id="logo">
+    <img src="images/finallogo.png">
+  </div>
   <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
   <script>
     // Initialize Firebase
