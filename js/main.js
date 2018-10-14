@@ -8,6 +8,5 @@ window.onload = function() {
   getUsers();
   setInterval(function () {
     saveLocation(latitude, longitude);
-    getUsers();
   }, 15000);
 }
