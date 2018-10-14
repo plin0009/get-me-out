@@ -168,10 +168,11 @@ function setUpClickListener() {
     map.addEventListener('tap', function (evt) {
       var coord = map.screenToGeo(evt.currentPointer.viewportX,
               evt.currentPointer.viewportY);
+              targetlat = coord.lat, targetlng = coord.lng;
       alert('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
           ((coord.lat > 0) ? 'N' : 'S') +
           ' ' + Math.abs(coord.lng.toFixed(4)) +
            ((coord.lng > 0) ? 'E' : 'W'));
     });
-    targetlat = coord.lat, targetlng = coord.lng;
+    
   }
