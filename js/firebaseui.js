@@ -8,6 +8,7 @@ var uiConfig = {
       console.log(uid);
       saveLocation(latitude, longitude);
       you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
+      setUpClickListener();
       return false;
     },
     signInFailure: function (error) {

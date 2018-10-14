@@ -175,5 +175,3 @@ function setUpClickListener() {
     });
     targetlat = coord.lat, targetlng = coord.lng;
   }
-
-  setUpClickListener();
