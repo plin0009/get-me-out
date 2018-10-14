@@ -23,11 +23,7 @@ function getUsers() {
     let users = snapshot.val();
     console.log(users);
     for (let currentUID in users) {
-      if (users.hasOwnProperty(currentUID)) {
-        console.log(currentUID);
-        if (currentUID != uid) {
-          continue;
-        }
+      if (users.hasOwnProperty(currentUID) && currentUID != uid) {
         let user = users[currentUID];
         others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
       }
