@@ -63,4 +63,3 @@ function loadThings (watchData) {
       moveToUser();
     }
   }
-}
