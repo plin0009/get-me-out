@@ -31,7 +31,9 @@ function getWatch(lat, long) {
         for (i = watchData.nwsAlerts.watch.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.watch[i].type == 9) {
             addInfoBlock(1, watchData.nwsAlerts.watch[i].description, watchData.nwsAlerts.watch[i].message, watchData.nwsAlerts.watch[i].validFromTimeLocal, watchData.nwsAlerts.watch[i].severity);
-            plotStaticPointWatch(watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].latitude, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].longitude);
+            for (j = 0; j < watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone.length; j++) {
+              plotStaticPointWatch(watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].latitude, watchData.nwsAlerts.watch[watchData.nwsAlerts.watch.length-1].zone[j].longitude);
+            }
           }
         }
       }
@@ -40,7 +42,9 @@ function getWatch(lat, long) {
         for (i = watchData.nwsAlerts.warning.length-1; i >= 0; i--) {
           if (watchData.nwsAlerts.warning[i].type == 9) {
             addInfoBlock(0, watchData.nwsAlerts.warning[i].description, watchData.nwsAlerts.warning[i].message, watchData.nwsAlerts.warning[i].validFromTimeLocal, watchData.nwsAlerts.warning[i].severity);
-            plotStaticPointWarning(watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].latitude, watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].longitude);
+            for (j = 0; j < watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone.length; j++) {
+              plotStaticPointWarning(watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].latitude, watchData.nwsAlerts.warning[watchData.nwsAlerts.warning.length-1].zone[j].longitude);
+            }
           }
         }
       }
