@@ -73,7 +73,7 @@ function you(latitude, longitude, initial) {
     'text-anchor="middle" fill="black" >'+initial+'</text></svg>';
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
-    var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon}, data: {uid:uid});
+    var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon, data: {uid:uid}});
     console.log(yourMarker);
     map.addObject(yourMarker);
     group.addObject(yourMarker);
