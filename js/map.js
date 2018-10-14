@@ -174,10 +174,4 @@ function setUpClickListener() {
           ' ' + Math.abs(coord.lng.toFixed(4)) +
            ((coord.lng > 0) ? 'E' : 'W'));
     });
-<<<<<<< HEAD
-    
   }
-=======
-    targetlat = coord.lat, targetlng = coord.lng;
-  }
->>>>>>> 186966228c609a5e8c698c08ac75f4de32d1a122
