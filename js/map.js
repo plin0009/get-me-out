@@ -17,9 +17,6 @@ function loadMap() {
   });
   defaultLayers.normal.map.setMax(14);
   defaultLayers.normal.map.setMin(4);
-  $("#map").scroll = function (e) {
-    e.preventDefault();
-  }
 
   map = new H.Map(document.getElementById('map'),
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
@@ -112,7 +109,7 @@ function onError (error) {
     alert("Couldn't find a route.");
 }
 
-var mapContainer = document.getElementById('map'), routeInstructionsContainer = document.getElementById('panel');
+var mapContainer = document.getElementById('map');
 
 function addRouteShapeToMap (route) {
     var lineString = new H.geo.LineString(), routeShape = route.shape, polyline;
