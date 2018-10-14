@@ -23,6 +23,7 @@ function loadMap() {
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
   var ui = H.ui.UI.createDefault(map, defaultLayers);
+  map.addObject(group);
 }
 
 function moveToUser(latitude, longitude) {
@@ -134,7 +135,7 @@ function addRouteShapeToMap (route) {
 
 function addManueversToMap (route) {
     var svgMarkup = '<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="8" fill="rgba(26, 24, 41, 0.7)" stroke="white" stroke-width="1"/></svg>';
-    var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}}), group = new  H.map.Group();
+    var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}}), maneuversGroup = new  H.map.Group();
 
     for (i = 0;  i < route.leg.length; i += 1) {
         for (j = 0;  j < route.leg[i].maneuver.length; j += 1) {
@@ -146,16 +147,16 @@ function addManueversToMap (route) {
             lng: maneuver.position.longitude} ,
             {icon: dot});
           marker.instruction = maneuver.instruction;
-          group.addObject(marker);
+          maneuversGroup.addObject(marker);
         }
     }
 
-    group.addEventListener('tap', function (evt) {
+    maneuversGroup.addEventListener('tap', function (evt) {
         map.setCenter(evt.target.getPosition());
         openBubble(evt.target.getPosition(), evt.target.instruction);
     }, false);
 
-    map.addObject(group);
+    map.addObject(maneuversGroup);
 }
 
 function addSummaryToPanel (summary) {
