@@ -175,6 +175,6 @@ function setUpClickListener() {
   }
 
 function removePreviousRoutes() {
-    map.remove(polyline);
-    map.remove(maneuversGroup);
+    map.removeObject(polyline);
+    map.removeObject(maneuversGroup);
 }
