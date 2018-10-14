@@ -1,23 +1,20 @@
-$(document).ready(function(){
-  $("#homeButton").click(function(){
-    $('html, body').animate({
-      scrollTop: $("#start").offset().top-1000
-   }, 500);
+$(document).ready(function () {
+  $('#fullpage').fullpage({
+      sectionsColor:['','rgb(26, 24, 41)','rgb(26, 24, 41)'],
+      css3:true
   });
 
-  $("#mapButton").click(function(){
-    $('html, body').animate({
-      scrollTop: $("#map").offset().top-40
-   }, 500);
+  $("#homeButton").click(function () {
+    $.fn.fullpage.moveTo(1);
   });
-    
 
-  $("#aboutButton").click(function(){
-    $('html, body').animate({
-      scrollTop: $("#about").offset().top+40
-   }, 500);
+  $("#mapButton").click(function () {
+    $.fn.fullpage.moveTo(2);
   });
-    
-    
-  
+
+  $("#aboutButton").click(function () {
+    $.fn.fullpage.moveTo(3);
+  });
+
+
 });
