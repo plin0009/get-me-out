@@ -1,4 +1,4 @@
-# get-me-out
+# ark
 For MHacks 11.
 
 We created a webapp used to help get people out of harms way in the case of a natural disaster by providing a ride sharing service. 
