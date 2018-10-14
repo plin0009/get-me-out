@@ -102,9 +102,6 @@ function calculateRouteFromAtoB (lat1, lng1, lat2, lng2) {
 
 function onSuccess (result) {
     var route = result.response.route[0];
-    if (maneuversGroup.getBounds) {
-        removePreviousRoutes();
-    }
     addRouteShapeToMap(route);
     addManueversToMap(route);
 
