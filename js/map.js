@@ -112,9 +112,9 @@ function onError (error) {
 }
 
 var mapContainer = document.getElementById('map');
-
+var polyline;
 function addRouteShapeToMap (route) {
-    var lineString = new H.geo.LineString(), routeShape = route.shape, polyline;
+    var lineString = new H.geo.LineString(), routeShape = route.shape;
 
     routeShape.forEach(function(point) {
         var parts = point.split(',');
