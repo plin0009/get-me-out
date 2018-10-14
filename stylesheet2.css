@@ -13,8 +13,7 @@ button{
   background-color:rgb(26, 24, 41);
   font-family: 'Scada', sans-serif;
   color:white;
-  margin-left:0%;
-  margin-right:0%;
+  
   font-size:150%;
 }
 button:hover{

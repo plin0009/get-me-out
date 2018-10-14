@@ -1,16 +1,19 @@
-$(function() {
-
-  var mainL = $("#main");
-  var mainL2 = mainL.offset().top / 2;
-  console.log(mainL2);
-  console.log($(window).scrollTop());
-
-  if ($(window).scrollTop() >= mainL2 ){
-    console.log(window.scrollTo(0,750));
-  }
-
- 
+$(document).ready(function(){
+  $("#mapButton").click(function(){
+    $('html, body').animate({
+      scrollTop: $("#map").offset().top-70
+   }, 500);
+  });
+  $("#aboutButton").click(function(){
+    $('html, body').animate({
+      scrollTop: $("#about").offset().top-70
+   }, 500);
+  });
+  $("#startButton").click(function(){
+    $('html, body').animate({
+      scrollTop: $("#start").offset().top-70
+   }, 500);
+  });
 });
-function goToMap(){
-      console.log(window.scrollTo(0,1200));
-}
+
+
