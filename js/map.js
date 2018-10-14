@@ -162,7 +162,7 @@ function addSummaryToPanel (summary) {
     // just use summary.distance and summary.time somehow
 }
 
-function setUpClickListener(map) {
+function setUpClickListener() {
     // Attach an event listener to map display
     // obtain the coordinates and display in an alert box.
     map.addEventListener('tap', function (evt) {
@@ -175,3 +175,5 @@ function setUpClickListener(map) {
     });
     targetlat = coord.lat, targetlng = coord.lng;
   }
+
+  setUpClickListener();
