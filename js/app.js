@@ -15,6 +15,9 @@ $(document).ready(function () {
   $("#aboutButton").click(function () {
     $.fn.fullpage.moveTo(3);
   });
+  $('#downArrow').click(function(){
+    $.fn.fullpage.moveTo(2);
+  });
 
 
 });
