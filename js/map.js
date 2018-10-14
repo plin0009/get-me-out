@@ -75,7 +75,7 @@ function you(latitude, longitude, initial) {
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
     console.log(yourMarker);
-    //map.addObject(yourMarker);
+    map.addObject(yourMarker);
     group.addObject(yourMarker);
 }
 
