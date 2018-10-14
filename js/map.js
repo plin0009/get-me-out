@@ -15,7 +15,7 @@ function loadMap() {
       tileSize: pixelRatio === 1 ? 128 : 256,
       ppi: pixelRatio === 1 ? undefined : 320
   });
-  defaultLayers.normal.map.setMax(14);
+  defaultLayers.normal.map.setMax(18);
   defaultLayers.normal.map.setMin(4);
 
   map = new H.Map(document.getElementById('map'),
