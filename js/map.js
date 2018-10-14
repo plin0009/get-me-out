@@ -81,3 +81,43 @@ function ending() {
     map.addObject(group);
     map.setViewBounds(group.getBounds());
 }
+
+function calculateRouteFromAtoB (platform, lat1, lng1, lat2, lng2) {
+    var router = platform.getRoutingService(),
+      routeRequestParams = {
+        mode: 'fastest;car',
+        representation: 'display',
+        routeattributes : 'waypoints,summary,shape,legs',
+        maneuverattributes: 'direction,action',
+        waypoint0: lat1, lng1, 
+        waypoint1: lat2, lng2  
+      };
+  
+  
+    router.calculateRoute(
+      routeRequestParams,
+      onSuccess,
+      onError
+    );
+}
+
+function onSuccess (result) {
+    var route = result.response.route[0];
+    addRouteShapeToMap(route);
+    addManueversToMap(route);
+  
+    addWaypointsToPanel(route.waypoint);
+    addManueversToPanel(route);
+    addSummaryToPanel(route.summary);
+}
+
+function onError (error) {
+    alert("Couldn't find a route.");
+}
+
+var mapContainer = document.getElementById('map'), routeInstructionsContainer = document.getElementById('panel');
+
+function addRouteShapeToMap (route) {
+    var lineString = new H.geo.LineString(), routeShape = route.shape, polyline;
+    
+}

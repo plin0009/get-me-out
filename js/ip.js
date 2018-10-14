@@ -4,7 +4,6 @@ function useIP() {
         console.log(data);
         moveToUser(data.latitude, data.longitude);
         saveLocation(data.latitude, data.longitude);
-        you(data.latitude, data.longitude);//get initial
         getWatch(data.latitude, data.longitude);
 
       }
