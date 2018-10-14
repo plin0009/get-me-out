@@ -20,19 +20,19 @@ function getUsers() {
     var users = snapshot.val();
     let keys = Object.keys(users);
     for (let marker in group.getObjects()) {
+      console.log(marker);
       let currentUID = marker.getData().uid;
       if (users.hasOwnProperty(currentUID)) {
         marker.setPosition({lat: users[currentUID].location[0], lng: users[currentUID].location[1]});
         keys = keys.filter(id => id != currentUID);
       }
     }
-    console.log("nonexistant", keys);
     for (let currentUID in keys) {
       if (currentUID == uid) {
         you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
         continue;
       }
-      console.log(users);
+      console.log(users, currentUID);
       let user = users[currentUID];
       others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""), currentUID);
     }
