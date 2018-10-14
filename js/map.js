@@ -119,5 +119,19 @@ var mapContainer = document.getElementById('map'), routeInstructionsContainer = 
 
 function addRouteShapeToMap (route) {
     var lineString = new H.geo.LineString(), routeShape = route.shape, polyline;
-    
+
+    routeShape.forEach(function(point) {
+        var parts = point.split(',');
+        lineString.pushLatLngAlt(parts[0], parts[1]);
+    });
+
+    polyline = new H.map.Polyline(lineString, {
+        style: {
+          lineWidth: 4,
+          strokeColor: 'rgba(26, 24, 41, 0.7)'
+        }
+      });
+
+      map.addObject(polyline);
+      map.setViewBounds(polyline.getBounds(), true);
 }
