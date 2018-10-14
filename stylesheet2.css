@@ -78,7 +78,7 @@ button:hover{
 
 }
 #name{
-  top:12%;
+  top:11%;
   position:relative;
   text-align: center;
   bottom: 0;
@@ -97,14 +97,15 @@ button:hover{
 #about{
   position:relative;
   float:left;
-  text-align:center;
+  text-align:left;
   width:100%;
   height:100%
 }
 #downArrow{
   cursor:pointer;
-  height:2%;
-  width:3%;
+  height:1%;
+  width:2%;
+  z-index:4;
 }
 
 .section{
@@ -157,7 +158,11 @@ button:hover{
 p{
   font-size:20px;
 }
+h1{
+  font-size:90px;
+}
 #firebaseui{
-  top:2%;
-  margin-top: 2%;
+  top:1%;
+  margin-top: 3%;
+  margin-bottom:1%;
 }
