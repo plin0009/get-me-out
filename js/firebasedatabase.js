@@ -18,7 +18,7 @@ function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     if (!uid) return;
     let users = snapshot.val();
-    let keys = users.keys();
+    let keys = Object.keys(users);
     for (let marker in group.getObjects()) {
       let currentUID = marker.getData().uid;
       if (users.hasOwnProperty(currentUID)) {
