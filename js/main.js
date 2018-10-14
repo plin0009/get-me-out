@@ -5,7 +5,9 @@ window.onload = function() {
   loadMap();
   useIP();
   useGeolocation();
+  getUsers();
   setInterval(function () {
     saveLocation(latitude, longitude);
+    getUsers();
   }, 15000);
 }

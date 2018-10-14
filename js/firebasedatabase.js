@@ -19,7 +19,7 @@ function saveLocation(lat, long) {
   }
 }
 function getUsers() {
-  database.ref("users").once("value", function (snapshot) {
+  database.ref("users").on("value", function (snapshot) {
     let user = snapshot.val();
     if (user.uid != uid && user.active + 50000 < new Date().getTime()) {
       others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
