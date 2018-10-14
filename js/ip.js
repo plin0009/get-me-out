@@ -1,8 +1,7 @@
 function useIP() {
   $.getJSON("https://json.geoiplookup.io/?callback=?",
       function (data) {
-        console.log(data);
-        calculateRouteFromAtoB(data.latitude, data.longitude, 42.3526257, -83.2392885);
+        //calculateRouteFromAtoB(data.latitude, data.longitude, 42.3526257, -83.2392885);
         moveToUser(data.latitude, data.longitude);
         saveLocation(data.latitude, data.longitude);
         getWatch(data.latitude, data.longitude);
