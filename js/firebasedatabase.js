@@ -4,27 +4,21 @@ saveLocation(latitude, longitude);
 function saveLocation(lat, long) {
   latitude = lat;
   longitude = long;
-  console.log(latitude, longitude);
   if (uid && database && latitude) {
-    latitude = lat;
-    longitude = long;
     console.log("Saving to database:", uid, latitude, longitude);
     let userRef = database.ref("users/" + uid);
-    console.log(userRef);
     userRef.set({
       fullName: name,
       location: [latitude, longitude],
       active: new Date().getTime()
     });
-  } else {
-    console.log(uid, database, latitude);
   }
 }
 function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     if (!uid) return;
     let users = snapshot.val();
-    map.removeAllObjects();
+    map.removeObjects(map.getObjects());
     for (let currentUID in users) {
       if (users.hasOwnProperty(currentUID)) {
         if (currentUID == uid) {
