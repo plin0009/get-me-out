@@ -112,7 +112,7 @@ function onError (error) {
     alert("Couldn't find a route.");
 }
 
-var mapContainer = document.getElementById('map'), routeInstructionsContainer = document.getElementById('panel');
+var mapContainer = document.getElementById('map');
 
 function addRouteShapeToMap (route) {
     var lineString = new H.geo.LineString(), routeShape = route.shape, polyline;
