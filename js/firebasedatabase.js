@@ -2,7 +2,9 @@ var database = firebase.database();
 saveLocation(latitude, longitude);
 
 function saveLocation(lat, long) {
-
+  latitude = lat;
+  longitude = long;
+  console.log(latitude, longitude);
   if (uid && database && latitude) {
     latitude = lat;
     longitude = long;
@@ -14,6 +16,8 @@ function saveLocation(lat, long) {
       location: [latitude, longitude],
       active: new Date().getTime()
     });
+  } else {
+    console.log(uid, database, latitude);
   }
 }
 function getUsers() {
