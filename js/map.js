@@ -1,7 +1,7 @@
-var map, group = new H.map.Group();
+var map, group = new H.map.Group(), platform;
 
 function loadMap() {
-  var platform = new H.service.Platform({
+    platform = new H.service.Platform({
     app_id: 'devportal-demo-20180625',
     app_code: '9v2BkviRwi9Ot26kp2IysQ',
     useHTTPS: true
@@ -82,23 +82,19 @@ function ending() {
     map.setViewBounds(group.getBounds());
 }
 
-function calculateRoute (platform, lat1, lng1, lat2, lng2) {
+function calculateRouteFromAtoB (lat1, lng1, lat2, lng2) {
     var router = platform.getRoutingService(),
       routeRequestParams = {
         mode: 'fastest;car',
         representation: 'display',
         routeattributes : 'waypoints,summary,shape,legs',
         maneuverattributes: 'direction,action',
-        waypoint0: lat1, lng1, 
-        waypoint1: lat2, lng2  
+        waypoint0: lat1+','+lng1,
+        waypoint1: lat2+','+lng2
       };
   
   
-    router.calculateRoute(
-      routeRequestParams,
-      onSuccess,
-      onError
-    );
+    router.calculateRoute(routeRequestParams, onSuccess, onError);
 }
 
 function onSuccess (result) {
