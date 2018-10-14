@@ -1,13 +1,13 @@
-var uid, name, photoURL;
+var uid, name;
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       let user = authResult.user;
       uid = user.uid;
       name = user.displayName;
-      photoURL = user.photoURL;
       console.log(uid);
       saveLocation(latitude, longitude);
+      you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
       return false;
     },
     signInFailure: function (error) {
