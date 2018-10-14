@@ -60,12 +60,13 @@ button:hover{
 }
 #main {
   height: 100%;
+  width:100%;
 }
 #map {
   width: 65%;
   height:100%;
   float:left;
-  position:relative;
+ 
 
 }
 #info {
