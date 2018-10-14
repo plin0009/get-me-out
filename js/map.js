@@ -1,5 +1,6 @@
 var map, group = new H.map.Group(), platform, targetlat, targetlng;
 var maneuversGroup = new  H.map.Group();
+var count = 0;
 
 function loadMap() {
     platform = new H.service.Platform({
@@ -25,7 +26,6 @@ function loadMap() {
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
   var ui = H.ui.UI.createDefault(map, defaultLayers);
   map.addObject(group);
-  map.addObject(maneuversGroup);
 }
 
 function moveToUser(latitude, longitude) {
@@ -102,11 +102,15 @@ function calculateRouteFromAtoB (lat1, lng1, lat2, lng2) {
 }
 
 function onSuccess (result) {
+    if (count > 0) {
+        removePreviousRoutes();
+    }
     var route = result.response.route[0];
     addRouteShapeToMap(route);
     addManueversToMap(route);
 
     addSummaryToPanel(route.summary);
+    count++;
 }
 
 function onError (error) {
@@ -154,8 +158,6 @@ function addManueversToMap (route) {
           maneuversGroup.addObject(marker);
         }
     }
-
-
 }
 
 
@@ -178,5 +180,10 @@ function setUpClickListener() {
 
 function removePreviousRoutes() {
     map.removeObject(polyline);
+<<<<<<< HEAD
     map.removeObject(maneuversGroup);
 }
+=======
+    maneuversGroup.removeAll();
+}
+>>>>>>> b50c364e976ac2e92bcbec6a900e5a119849ab6c
