@@ -8,7 +8,8 @@ function addInfoBlock(isWatch, description, message, time, severity) {
       $("<div/>", {append: [
       $("<p/>", {"class": "description", text: description}),
       $("<p/>", {"class": "message", text: message})]}),
-      $("<p/>", {"class": "severity", text: severity}), // change to bar later
+      $("<div/>", {"class": "severityfull"}), // change to bar later
+      $("<div/>", {"class": "severitybar", width: severity +"%"}), // change to bar later
       $("<p/>", {"class": "time", text: hourDifference + " hours"})],
     appendTo: "#info"
   });
