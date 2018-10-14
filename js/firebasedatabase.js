@@ -25,7 +25,8 @@ function getUsers() {
       marker.setPosition({lat: users[currentUID].location[0], lng: users[currentUID].location[1]});
       keys = keys.filter(id => id != currentUID);
     });
-    for (let currentUID in keys) {
+    for (let i = 0; i < keys.length; i++) {
+      let currentUID = keys[i];
       console.log(users, keys, currentUID);
       if (currentUID == uid) {
         you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
