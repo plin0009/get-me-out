@@ -6,8 +6,8 @@ function loadMap() {
     app_code: '9v2BkviRwi9Ot26kp2IysQ',
     useHTTPS: true
   });
-  
-  
+
+
 
   var pixelRatio = window.devicePixelRatio || 1;
 
@@ -17,7 +17,9 @@ function loadMap() {
   });
   defaultLayers.normal.map.setMax(14);
   defaultLayers.normal.map.setMin(4);
-  
+  $("#map").scroll = function (e) {
+    e.preventDefault();
+  }
 
   map = new H.Map(document.getElementById('map'),
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
@@ -92,8 +94,8 @@ function calculateRouteFromAtoB (lat1, lng1, lat2, lng2) {
         waypoint0: lat1+','+lng1,
         waypoint1: lat2+','+lng2
       };
-  
-  
+
+
     router.calculateRoute(routeRequestParams, onSuccess, onError);
 }
 
@@ -101,7 +103,7 @@ function onSuccess (result) {
     var route = result.response.route[0];
     addRouteShapeToMap(route);
     addManueversToMap(route);
-  
+
     addManueversToPanel(route);
     addSummaryToPanel(route.summary);
 }
@@ -153,7 +155,7 @@ function addManueversToMap (route) {
         map.setCenter(evt.target.getPosition());
         openBubble(evt.target.getPosition(), evt.target.instruction);
     }, false);
-    
+
     map.addObject(group);
 }
 
