@@ -22,7 +22,7 @@ function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     let users = snapshot.val();
     for (let user in users) {
-      if (users.hasOwnProperty(user) && user.key() != uid) {
+      if (users.hasOwnProperty(user) && user != uid) {
         console.log(user.fullName, user.active);
         if (user.active + 50000 < new Date().getTime()) {
           others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
