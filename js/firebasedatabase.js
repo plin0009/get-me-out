@@ -18,6 +18,7 @@ function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     if (!uid) return;
     let users = snapshot.val();
+    map.removeAllObjects();
     for (let currentUID in users) {
       if (users.hasOwnProperty(currentUID) && currentUID !== uid) {
         let user = users[currentUID];
