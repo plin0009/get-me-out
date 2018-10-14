@@ -168,7 +168,7 @@ function addSummaryToPanel (summary) {
     $("#route-time").text("Estimated time of arrival: " + MMss(summary.travelTime));
 }
 function MMss(time) {
-  return Math.floor(time / 60) + "minutes " + (time % 60) + " seconds";
+  return Math.floor(time / 60) + " minutes " + (time % 60) + " seconds";
 }
 
 function setUpClickListener() {
