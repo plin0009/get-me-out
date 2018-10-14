@@ -2,6 +2,9 @@ var database = firebase.database();
 saveLocation(latitude, longitude);
 
 function saveLocation(lat, long) {
+  latitude = lat;
+  longitude = long;
+  console.log(latitude, longitude);
   if (uid && database && latitude) {
     latitude = lat;
     longitude = long;

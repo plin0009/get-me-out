@@ -17,9 +17,6 @@ function loadMap() {
   });
   defaultLayers.normal.map.setMax(14);
   defaultLayers.normal.map.setMin(4);
-  $("#map").scroll = function (e) {
-    e.preventDefault();
-  }
 
   map = new H.Map(document.getElementById('map'),
       defaultLayers.normal.map, {pixelRatio: pixelRatio});
