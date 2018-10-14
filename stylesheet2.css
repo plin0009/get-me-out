@@ -16,8 +16,8 @@ button{
   text-align: center;
   margin-left:20%;
   font-size:120%;
-  border-radius:10%;
-  height:140%;
+  border-radius:5%;
+  height:200%;
   
 }
 button:hover{
@@ -109,8 +109,8 @@ button:hover{
   z-index:4;
 }
 #findRoute{
-  height:5%;
-  width:10%;
+  height:7%;
+  width:50%;
 }
 .section{
   width:100%;
