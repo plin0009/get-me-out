@@ -18,19 +18,25 @@ function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     if (!uid) return;
     let users = snapshot.val();
-    group.removeObjects(group.getObjects());
-    for (let currentUID in users) {
+    let keys = users.keys();
+    for (let marker in group.getObjects()) {
+      let currentUID = marker.getData().uid;
       if (users.hasOwnProperty(currentUID)) {
-        if (currentUID == uid) {
-          you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
-          continue;
-        }
-        let user = users[currentUID];
-        others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
-        console.log(user.fullName);
+        marker.setPosition({lat: users[currentUID].location[0], lng: users[currentUID].location[1]});
+        keys = keys.filter(id => id != currentUID);
+      }
+    }
+    console.log("nonexistant", keys);
+    for (let currentUID in keys) {
+      if (currentUID == uid) {
+        you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
+        continue;
+      }
+      let user = users[currentUID];
+      others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""), currentUID);
       }
     }
   }, function (err) {
     console.log(err);
-  })
+  });
 }
