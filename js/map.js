@@ -1,5 +1,4 @@
-var map, group = new H.map.Group(), platform, targetlat, targetlng;
-var maneuversGroup = new  H.map.Group();
+var map, group = new H.map.Group(), platform, targetlat, targetlng, maneuversGroup;
 
 function loadMap() {
     platform = new H.service.Platform({
@@ -139,7 +138,7 @@ function addRouteShapeToMap (route) {
 function addManueversToMap (route) {
     var svgMarkup = '<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="8" fill="rgba(26, 24, 41, 0.7)" stroke="white" stroke-width="1"/></svg>';
     var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}});
-    
+    maneuversGroup = new  H.map.Group();
 
     for (i = 0;  i < route.leg.length; i += 1) {
         for (j = 0;  j < route.leg[i].maneuver.length; j += 1) {
