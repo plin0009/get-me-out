@@ -14,7 +14,7 @@ function useGeolocation() {
 function geolocationSuccess(position) {
   // got the geolocation
   console.log("User geolocation: ", position.coords.latitude, position.coords.longitude);
-  moveToUser(position.coords.latitude, position.coords.longitude);
+  //moveToUser(position.coords.latitude, position.coords.longitude);
   saveLocation(position.coords.latitude, position.coords.longitude);
 }
 function geolocationError(error) {
