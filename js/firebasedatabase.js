@@ -21,6 +21,7 @@ function saveLocation(lat, long) {
 function getUsers() {
   database.ref("users").on("value", function (snapshot) {
     let users = snapshot.val();
+    console.log(users);
     for (let currentUID in users) {
       if (users.hasOwnProperty(currentUID)) {
         console.log(currentUID);
@@ -28,10 +29,7 @@ function getUsers() {
           continue;
         }
         let user = users[currentUID];
-        console.log(user.fullName, user.active);
-        if (user.active + 40000 < new Date().getTime()) {
-          others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
-        }
+        others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
       }
     }
   }, function (err) {
