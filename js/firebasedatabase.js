@@ -2,17 +2,19 @@ var database = firebase.database();
 saveLocation(latitude, longitude);
 
 function saveLocation(lat, long) {
-  if (!uid || !database || !latitude) return;
-  latitude = lat;
-  longitude = long;
-  console.log("Saving to database:", uid, latitude, longitude);
-  let userRef = database.ref("users/" + uid);
-  console.log(userRef);
-  userRef.set({
-    fullName: name,
-    location: [latitude, longitude],
-    active: new Date().getTime()
-  });
+
+  if (uid && database && latitude) {
+    latitude = lat;
+    longitude = long;
+    console.log("Saving to database:", uid, latitude, longitude);
+    let userRef = database.ref("users/" + uid);
+    console.log(userRef);
+    userRef.set({
+      fullName: name,
+      location: [latitude, longitude],
+      active: new Date().getTime()
+    });
+  }
 }
 function getUsers() {
   database.ref("users").on("value", function (snapshot) {
