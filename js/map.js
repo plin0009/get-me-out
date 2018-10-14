@@ -60,7 +60,8 @@ function others(latitude, longitude, initial) {
 
     var otherIcon = new H.map.Icon(svgMarkup);
     var otherMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: otherIcon});
-    map.addObject(otherMarker);
+    console.log(otherMarker);
+    //map.addObject(otherMarker);
     group.addObject(otherMarker);
 }
 
@@ -72,7 +73,8 @@ function you(latitude, longitude, initial) {
 
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
-    map.addObject(yourMarker);
+    console.log(yourMarker);
+    //map.addObject(yourMarker);
     group.addObject(yourMarker);
 }
 
