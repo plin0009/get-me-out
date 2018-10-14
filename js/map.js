@@ -15,7 +15,7 @@ function loadMap() {
       tileSize: pixelRatio === 1 ? 128 : 256,
       ppi: pixelRatio === 1 ? undefined : 320
   });
-  defaultLayers.normal.map.setMax(14);
+  defaultLayers.normal.map.setMax(18);
   defaultLayers.normal.map.setMin(4);
 
   map = new H.Map(document.getElementById('map'),
@@ -23,6 +23,7 @@ function loadMap() {
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
   var ui = H.ui.UI.createDefault(map, defaultLayers);
+  map.addObject(group);
 }
 
 function moveToUser(latitude, longitude) {
@@ -48,7 +49,7 @@ function plotStaticPointWarning(lat, long) {
     'text-anchor="middle" fill="red" > </text></svg>';
     var warningIcon = new H.map.Icon(svgMarkup);
     var marker = new H.map.Marker({lat: lat, lng: long}, {icon: warningIcon});
-    map.addObject(marker);
+    //map.addObject(marker);
     group.addObject(marker);
 }
 
@@ -74,7 +75,7 @@ function you(latitude, longitude, initial) {
     var yourMarkerIcon = new H.map.Icon(svgMarkup);
     var yourMarker = new H.map.Marker({lat: latitude, lng: longitude}, {icon: yourMarkerIcon});
     console.log(yourMarker);
-    //map.addObject(yourMarker);
+    map.addObject(yourMarker);
     group.addObject(yourMarker);
 }
 
@@ -103,7 +104,6 @@ function onSuccess (result) {
     addRouteShapeToMap(route);
     addManueversToMap(route);
 
-    addManueversToPanel(route);
     addSummaryToPanel(route.summary);
 }
 
@@ -134,7 +134,7 @@ function addRouteShapeToMap (route) {
 
 function addManueversToMap (route) {
     var svgMarkup = '<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="8" fill="rgba(26, 24, 41, 0.7)" stroke="white" stroke-width="1"/></svg>';
-    var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}}), group = new  H.map.Group();
+    var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}}), maneuversGroup = new  H.map.Group();
 
     for (i = 0;  i < route.leg.length; i += 1) {
         for (j = 0;  j < route.leg[i].maneuver.length; j += 1) {
@@ -146,16 +146,16 @@ function addManueversToMap (route) {
             lng: maneuver.position.longitude} ,
             {icon: dot});
           marker.instruction = maneuver.instruction;
-          group.addObject(marker);
+          maneuversGroup.addObject(marker);
         }
     }
 
-    group.addEventListener('tap', function (evt) {
+    maneuversGroup.addEventListener('tap', function (evt) {
         map.setCenter(evt.target.getPosition());
         openBubble(evt.target.getPosition(), evt.target.instruction);
     }, false);
 
-    map.addObject(group);
+    map.addObject(maneuversGroup);
 }
 
 function addSummaryToPanel (summary) {

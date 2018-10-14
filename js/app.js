@@ -21,5 +21,9 @@ $(document).ready(function () {
   }, 500);
   });
 
+  $('#findRoute').click(function(){
+    calculateRouteFromAtoB(42.2747974,-83.7359662, 42.3770921,-83.5387994);
+  });
+
 
 });
