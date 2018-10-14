@@ -19,14 +19,12 @@ function getUsers() {
     if (!uid) return;
     var users = snapshot.val();
     let keys = Object.keys(users);
-    for (let marker in group.getObjects()) {
+    group.forEach((marker) => {
       console.log(marker);
       let currentUID = marker.getData().uid;
-      if (users.hasOwnProperty(currentUID)) {
-        marker.setPosition({lat: users[currentUID].location[0], lng: users[currentUID].location[1]});
-        keys = keys.filter(id => id != currentUID);
-      }
-    }
+      marker.setPosition({lat: users[currentUID].location[0], lng: users[currentUID].location[1]});
+      keys = keys.filter(id => id != currentUID);
+    });
     for (let currentUID in keys) {
       if (currentUID == uid) {
         you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
