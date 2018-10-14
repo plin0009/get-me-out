@@ -11,11 +11,11 @@ function saveLocation(lat, long) {
     console.log(userRef);
     userRef.set({
       fullName: name,
-      location: [latitude, longitude]
+      location: [latitude, longitude],
+      active: new Date().toString()
     });
-    console.log(userRef);
   } else {
-    console.log("No");
+    console.log("Not ready to save to database.");
   }
 }
 function getNames() {
@@ -25,15 +25,4 @@ function getNames() {
   }, function (err) {
     console.log(err);
   })
-}
-
-function getOwnData() {
-  if (uid && database) {
-    let userRef = database.ref("users/" + uid);
-    console.log(userRef);
-    return userRef.val();
-  }
-}
-function getOwnDataTemp() {
-  return photoURL;
 }
