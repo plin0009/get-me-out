@@ -1,22 +1,24 @@
 $(document).ready(function () {
-  $('#fullpage').fullpage({
-      sectionsColor:['','rgb(26, 24, 41)','rgb(26, 24, 41)'],
-      css3:true
-  });
 
-  $("#homeButton").click(function () {
-    $.fn.fullpage.moveTo(1);
+  $("#homeButton").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#start").offset().top+40
+    }, 500);
   });
-
-  $("#mapButton").click(function () {
-    $.fn.fullpage.moveTo(2);
+  $("#mapButton").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#main").offset().top+40
+    }, 500);
   });
-
-  $("#aboutButton").click(function () {
-    $.fn.fullpage.moveTo(3);
+  $("#aboutButton").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top+40
+    }, 500);
   });
   $('#downArrow').click(function(){
-    $.fn.fullpage.moveTo(2);
+    $('html, body').animate({
+      scrollTop: $("main").offset().top+40
+  }, 500);
   });
 
 
