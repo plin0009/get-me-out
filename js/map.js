@@ -164,7 +164,7 @@ function addManueversToMap (route) {
 
 function addSummaryToPanel (summary) {
     // just use summary.distance and summary.time somehow
-    $("#route-distance").text("Distance: " + summary.distance/1000+" km");
+    $("#route-distance").text("Distance: " + Math.round(summary.distance/1000)+" km");
     $("#route-time").text("Estimated time of arrival: " + MMss(summary.travelTime));
 }
 function MMss(time) {
