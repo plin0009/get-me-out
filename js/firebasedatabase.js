@@ -26,11 +26,11 @@ function getUsers() {
       keys = keys.filter(id => id != currentUID);
     });
     for (let currentUID in keys) {
+      console.log(users, keys, currentUID);
       if (currentUID == uid) {
         you(latitude, longitude, name.split(" ").map(x => x.substr(0,1)).join(""));
         continue;
       }
-      console.log(users, currentUID);
       let user = users[currentUID];
       others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""), currentUID);
     }
