@@ -49,7 +49,7 @@ function plotStaticPointWarning(lat, long) {
     'text-anchor="middle" fill="red" > </text></svg>';
     var warningIcon = new H.map.Icon(svgMarkup);
     var marker = new H.map.Marker({lat: lat, lng: long}, {icon: warningIcon});
-    map.addObject(marker);
+    //map.addObject(marker);
     group.addObject(marker);
 }
 
@@ -104,7 +104,6 @@ function onSuccess (result) {
     addRouteShapeToMap(route);
     addManueversToMap(route);
 
-    addManueversToPanel(route);
     addSummaryToPanel(route.summary);
 }
 
