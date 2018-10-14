@@ -78,7 +78,7 @@ function you(latitude, longitude, initial) {
 
 function ending() {
     map.addObject(group);
-    group.getBounds && map.setViewBounds(group.getBounds());
+    group.getBounds() && map.setViewBounds(group.getBounds());
 }
 
 function calculateRouteFromAtoB (lat1, lng1, lat2, lng2) {
