@@ -1,4 +1,4 @@
-var testData = true;
+var testData = false;
 function useIP() {
   $.getJSON("https://json.geoiplookup.io/?callback=?",
       function (data) {
