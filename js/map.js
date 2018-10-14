@@ -113,7 +113,7 @@ function onError (error) {
 
 var mapContainer = document.getElementById('map');
 var polyline;
-polyline.id = "route";
+
 function addRouteShapeToMap (route) {
     var lineString = new H.geo.LineString(), routeShape = route.shape;
 
@@ -132,11 +132,12 @@ function addRouteShapeToMap (route) {
       map.addObject(polyline);
       map.setViewBounds(polyline.getBounds(), true);
 }
-var maneuversGroup;
-maneuversGroup.id = "route";
+var maneuversGroup = new  H.map.Group();
+
 function addManueversToMap (route) {
     var svgMarkup = '<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="8" fill="rgba(26, 24, 41, 0.7)" stroke="white" stroke-width="1"/></svg>';
-    var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}}), maneuversGroup = new  H.map.Group();
+    var dot = new H.map.Icon(svgMarkup, {anchor: {x:8, y:8}});
+    
 
     for (i = 0;  i < route.leg.length; i += 1) {
         for (j = 0;  j < route.leg[i].maneuver.length; j += 1) {
@@ -152,13 +153,10 @@ function addManueversToMap (route) {
         }
     }
 
-    maneuversGroup.addEventListener('tap', function (evt) {
-        map.setCenter(evt.target.getPosition());
-        openBubble(evt.target.getPosition(), evt.target.instruction);
-    }, false);
-
-    map.addObject(maneuversGroup);
+    
 }
+
+map.addObject(maneuversGroup);
 
 function addSummaryToPanel (summary) {
     // just use summary.distance and summary.time somehow
