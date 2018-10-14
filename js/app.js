@@ -15,18 +15,8 @@ $(document).ready(function(){
    }, 500);
   });
 
-  $('#fullpage').fullpage({
-		//options here
-		autoScrolling:true,
-		scrollHorizontally: true
-	});
-
-	//methods
-  $.fn.fullpage.setAllowScrolling(false);
   
-  $('#fullpage').fullpage({
-    sections[]
-  });
+
 });
 
 
