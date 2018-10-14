@@ -19,10 +19,16 @@ function saveLocation(lat, long) {
   }
 }
 function getUsers() {
-  database.ref("users").once("value", function (snapshot) {
-    let user = snapshot.val();
-    if (user.uid != uid && user.active + 50000 < new Date().getTime()) {
-      others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
+  database.ref("users").on("value", function (snapshot) {
+    let users = snapshot.val();
+    for (let currentUID in users) {
+      if (users.hasOwnProperty(currentUID) && currentUID != uid) {
+        let user = users[currentUID];
+        console.log(user.fullName, user.active);
+        if (user.active + 50000 < new Date().getTime()) {
+          others(user.location[0], user.location[1], user.fullName.split(" ").map(x => x.substr(0,1)).join(""));
+        }
+      }
     }
   }, function (err) {
     console.log(err);
