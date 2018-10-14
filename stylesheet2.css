@@ -110,7 +110,11 @@ button:hover{
 }
 #findRoute{
   height:7%;
+<<<<<<< HEAD
   width:50%;
+=======
+  width:30%;
+>>>>>>> 20bcb4ba096de2d5125c2db6c15d59788e214c4f
 }
 .section{
   width:100%;
