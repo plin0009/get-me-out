@@ -102,7 +102,6 @@ function onSuccess (result) {
     addRouteShapeToMap(route);
     addManueversToMap(route);
   
-    addWaypointsToPanel(route.waypoint);
     addManueversToPanel(route);
     addSummaryToPanel(route.summary);
 }
